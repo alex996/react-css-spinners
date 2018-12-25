@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
-import { Ellipsis } from 'react-css-spinners'
+import React from 'react'
+import { Ellipsis, Ring, Ripple } from 'react-css-spinners'
 
-class App extends Component {
-  render () {
-    return <Ellipsis />
-  }
-}
+const App = props => (
+  <>
+    <Ellipsis />
+    <Ring />
+    <Ripple />
+  </>
+)
 
 export default App
