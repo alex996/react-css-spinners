@@ -57,8 +57,7 @@
     "rollup-plugin-babel": "^4.1.0",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-string": "^2.0.2",
-    "rollup-plugin-terser": "^3.0.0",
-    "serve": "^10.1.1"
+    "rollup-plugin-terser": "^3.0.0"
   },
   "peerDependencies": {
     "react": ">=15"
