@@ -1,0 +1,20 @@
+{
+  "name": "react-css-spinners",
+  "version": "1.0.0",
+  "description": "CSS-only spinners for React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex996/react-css-spinners.git"
+  },
+  "keywords": ["react", "css", "spinners"],
+  "author": "Alex",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alex996/react-css-spinners/issues"
+  },
+  "homepage": "https://github.com/alex996/react-css-spinners#readme"
+}
