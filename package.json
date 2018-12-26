@@ -5,6 +5,9 @@
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
   "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "rollup -c",
@@ -18,7 +21,8 @@
     "storybook": "start-storybook -p 9001 -c storybook",
     "storybook:build": "build-storybook -c storybook",
     "predeploy": "npm run storybook:build",
-    "deploy": "gh-pages -d storybook-static"
+    "deploy": "gh-pages -d storybook-static",
+    "prepublish": "npm run build"
   },
   "husky": {
     "hooks": {
