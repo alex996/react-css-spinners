@@ -22,7 +22,7 @@
     "storybook:build": "build-storybook -c storybook",
     "predeploy": "npm run storybook:build",
     "deploy": "gh-pages -d storybook-static",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "husky": {
     "hooks": {
