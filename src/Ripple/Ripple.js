@@ -3,7 +3,7 @@ import styles from './styles.css'
 
 const Ripple = props => (
   <>
-    <style>{`${styles}`}</style>
+    <style>{styles}</style>
     <div className="lds-ripple">
       <div />
       <div />

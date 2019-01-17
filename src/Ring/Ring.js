@@ -3,7 +3,7 @@ import styles from './styles.css'
 
 const Ring = props => (
   <>
-    <style>{`${styles}`}</style>
+    <style>{styles}</style>
     <div className="lds-ring">
       <div />
       <div />

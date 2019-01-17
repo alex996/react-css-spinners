@@ -3,7 +3,7 @@
 exports[`renders correctly 1`] = `
 Array [
   <style>
-    [object Object]
+    
   </style>,
   <div
     className="lds-ring"
