@@ -85,7 +85,7 @@
     "rollup-plugin-terser": "^4.0.2"
   },
   "peerDependencies": {
-    "react": ">=15"
+    "react": ">=16.2"
   },
   "engines": {
     "node": ">=8"
