@@ -1,17 +1,16 @@
-import { configure, addDecorator } from '@storybook/react'
-import { withOptions } from '@storybook/addon-options'
+import { configure, addParameters } from '@storybook/react'
 import packageJson from '../package.json'
 
 function loadStories () {
   require('../stories/index.js')
 }
 
-addDecorator(
-  withOptions({
-    name: 'React CSS Spinners',
-    url: packageJson.repository.url,
-    showAddonPanel: false
-  })
-)
+addParameters({
+  options: {
+    brandTitle: 'React CSS Spinners',
+    brandUrl: packageJson.repository.url,
+    showPanel: false
+  }
+})
 
 configure(loadStories, module)

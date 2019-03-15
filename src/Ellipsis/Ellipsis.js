@@ -3,7 +3,7 @@ import styles from './styles.css'
 
 const Ellipsis = props => (
   <>
-    <style>{styles}</style>
+    <style>{styles.toString()}</style>
     <div className="lds-ellipsis">
       <div />
       <div />

@@ -19,6 +19,7 @@
     "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test:staged": "jest --findRelatedTests",
     "storybook": "start-storybook -c storybook",
+    "prestorybook:build": "rm -rf storybook-static",
     "storybook:build": "build-storybook -c storybook",
     "storybook:serve": "serve storybook-static",
     "predeploy": "npm run storybook:build",
