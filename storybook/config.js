@@ -7,7 +7,6 @@ function loadStories () {
 
 addParameters({
   options: {
-    brandTitle: 'React CSS Spinners',
     brandUrl: packageJson.repository.url,
     showPanel: false
   }
