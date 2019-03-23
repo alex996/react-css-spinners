@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "latest",
+    "react": "16.8.5",
     "react-css-spinners": "../..",
-    "react-dom": "latest",
-    "react-scripts": "latest"
+    "react-dom": "16.8.5",
+    "react-scripts": "2.1.8"
   },
   "scripts": {
     "start": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
