@@ -45,9 +45,9 @@ import { Ellipsis } from 'react-css-spinners'
 
 ## Examples
 
-- [UMD via CDN](./exampes/cdn)
-- [Create-React-App](./exampes/cra)
-- [Server-Side Rendering](./exampes/ssr)
+- [UMD via CDN](./examples/cdn)
+- [Create-React-App](./examples/cra)
+- [Server-Side Rendering](./examples/ssr)
 
 ## Copyright
 
