@@ -9,6 +9,7 @@
     "dist"
   ],
   "scripts": {
+    "commit": "git-cz",
     "prebuild": "rm -rf dist",
     "build": "rollup -c",
     "lint": "eslint '**/*.js'",
@@ -60,7 +61,9 @@
     "@storybook/react": "^5.1.9",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
+    "commitizen": "^3.1.1",
     "coveralls": "^3.0.5",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^6.0.1",
     "eslint-config-standard": "^13.0.1",
     "eslint-plugin-import": "^2.18.0",
@@ -94,6 +97,11 @@
   "jest": {
     "moduleNameMapper": {
       "\\.css$": "<rootDir>/mocks/styles.js"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
     }
   }
 }
