@@ -28,7 +28,10 @@ yarn add react-css-spinners
 For development and debugging, use an unminified version
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/react-css-spinners@latest/css/style.css" crossorigin="anonymous" />
+<link
+  rel="stylesheet" crossorigin="anonymous"
+  href="https://unpkg.com/react-css-spinners@latest/css/style.css"
+/>
 
 <script src="https://unpkg.com/react-css-spinners@latest/umd/bundle.js" crossorigin></script>
 ```
@@ -36,12 +39,15 @@ For development and debugging, use an unminified version
 In production, use a minified and optimized version
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/react-css-spinners@latest/css/style.min.css" crossorigin="anonymous" />
+<link
+  rel="stylesheet" crossorigin="anonymous"
+  href="https://unpkg.com/react-css-spinners@latest/css/style.min.css"
+/>
 
 <script src="https://unpkg.com/react-css-spinners@latest/umd/bundle.min.js" crossorigin></script>
 ```
 
-## Prerequisites
+## Getting Started
 
 Make sure that your build toolchain supports CSS files. For example, with Webpack you can use [`css-loader`](https://github.com/webpack-contrib/css-loader) and/or [`sass-loader`](https://github.com/webpack-contrib/sass-loader). If you have Rollup, consider [`rollup-plugin-postcss`](https://github.com/egoist/,rollup-plugin-postcss). Alternatively, Parcel has support for `.css` files and `@import`s out of the box.
 
@@ -49,7 +55,7 @@ You have the choice of extracting CSS into an external stylesheet (ex: [`mini-cs
 
 Also, be sure to install `react` (and `react-dom`) as it's a peer dependency of this library. If you use CommonJS exports, you'd also need to install `@babel/runtime`.
 
-## Getting Started
+## Usage
 
 Import any spinner of your choice along with its styles, and render it as usual.
 
@@ -72,7 +78,7 @@ render(<Loader />, document.getElementById('app'))
 You can also import component styles separately, for example in `style.scss`
 
 ```scss
-@import '~react-css-spinners/css/elipsis.css';
+@import '~react-css-spinners/css/ellipsis.css';
 ```
 
 Finally, you could also import all styles at once (discouraged)
@@ -91,9 +97,9 @@ You will find further demos under `/examples` folder
 
 ## Styling
 
-This library doesn't make assumptions about the end user's styling solution. As such, it doesn't lock you into a CSS-in-JS library, such as `emotion` or `styled-components`, to avoid bundle size overhead. It doesn't rely on CSS modules either, since they have limited SSR support depending on the bundler (as in `rollup` for example). Prior, it used to embed CSS in a `style` tag with each component, but that led to duplication if you used the same spinner more than once.
+This library doesn't make assumptions about the end user's styling solution. As such, it doesn't lock you into a CSS-in-JS library, such as `emotion` or `styled-components`, to avoid bundle size overhead. It doesn't rely on CSS modules either, since they have limited SSR support depending on the bundler (as in `rollup` for example).
 
-Now, the library ships with dedicated CSS files which you can manually import for each component, thus minimizing overall CSS footprint. If you already have CSS, SASS/LESS, or PostCSS set up, they will be bundled together with your existing styles. Otherwise, refer to [Prerequisites](#prerequisites) section above.
+Prior, it used to embed CSS in a `style` tag with each component, but that led to duplication if you used the same spinner more than once. Now, the library ships with dedicated CSS files which you can manually import for each component, thus minimizing overall CSS footprint.
 
 ## Copyright
 
