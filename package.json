@@ -32,7 +32,7 @@
     "prebuild": "rm -rf css dist umd",
     "build": "run-p build:*",
     "build:cjs": "babel src --out-dir dist --extensions '.ts,.tsx' --ignore '**/*.test.tsx'",
-    "build:esm": "BABEL_ENV=esm babel src --out-dir dist/es --extensions '.ts,.tsx' --ignore '**/*.test.tsx'",
+    "build:esm": "BABEL_ENV=esm babel src --out-dir dist/esm --extensions '.ts,.tsx' --ignore '**/*.test.tsx'",
     "build:umd": "rollup -c",
     "lint": "eslint '**/*.{js,ts,tsx}'",
     "lint:fix": "npm run lint -- --fix",
