@@ -3,8 +3,10 @@
     "browser": true,
     "es6": true
   },
+  "parser": "@typescript-eslint/parser",
   "extends": [
     "standard",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:jest/recommended"
   ],
@@ -23,5 +25,9 @@
     "react": {
       "version": "latest"
     }
+  },
+  "rules": {
+    "@typescript-eslint/indent": "off",
+    "jsx-quotes": ["error", "prefer-single"]
   }
 }

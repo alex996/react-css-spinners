@@ -1,6 +1,10 @@
 coverage
 
+css
+
 dist
+
+umd
 
 node_modules
 

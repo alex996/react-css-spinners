@@ -1,42 +1,68 @@
 import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
-import { string } from 'rollup-plugin-string'
+import postcss from 'rollup-plugin-postcss'
+import copy from 'rollup-plugin-copy'
 
-const dist = 'dist'
-const bundle = 'bundle'
+const input = 'index.ts'
 
-const production = !process.env.ROLLUP_WATCH
-
-export default {
-  input: 'src/index.js',
-  external: ['react'],
-  output: [
-    {
-      file: `${dist}/${bundle}.cjs.js`,
-      format: 'cjs'
-    },
-    {
-      file: `${dist}/${bundle}.esm.js`,
-      format: 'esm'
-    },
-    {
-      name: 'ReactCssSpinners',
-      file: `${dist}/${bundle}.umd.js`,
-      globals: {
-        react: 'React'
-      },
-      format: 'umd'
-    }
-  ],
-  plugins: [
-    resolve(),
-    babel({
-      exclude: 'node_modules/**'
-    }),
-    string({
-      include: '**/*.css'
-    }),
-    production && terser()
-  ]
+const globals = {
+  react: 'React'
 }
+
+const external = Object.keys(globals)
+
+const extensions = ['.ts', '.tsx']
+
+const plugins = [
+  resolve({
+    extensions
+  }),
+  babel({
+    extensions,
+    exclude: 'node_modules/**',
+    runtimeHelpers: true
+  }),
+  copy({
+    targets: [{ src: ['src/**/*.css'], dest: 'css' }]
+  })
+]
+
+const output = {
+  globals,
+  name: 'ReactCssSpinners',
+  format: 'umd'
+}
+
+export default [
+  {
+    input,
+    external,
+    output: {
+      ...output,
+      file: 'umd/bundle.js'
+    },
+    plugins: [
+      ...plugins,
+      postcss({
+        extract: 'css/style.css'
+      })
+    ]
+  },
+  {
+    input,
+    external,
+    output: {
+      ...output,
+      file: 'umd/bundle.min.js'
+    },
+    plugins: [
+      ...plugins,
+      postcss({
+        extract: 'css/style.min.css',
+        minimize: true
+      }),
+      terser()
+    ]
+  }
+]

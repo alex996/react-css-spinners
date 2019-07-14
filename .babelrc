@@ -1,20 +1,18 @@
 {
-  "presets": [
-    [
-      "@babel/env",
-      {
-        "modules": false,
-        "targets": {
-          "browsers": "> 0.25%, ie 11, not op_mini all, not dead",
-          "node": 8
-        }
-      }
-    ],
-    "@babel/react"
-  ],
+  "presets": ["@babel/typescript", "@babel/env", "@babel/react"],
+  "plugins": ["@babel/transform-runtime"],
   "env": {
-    "test": {
-      "presets": ["@babel/env", "@babel/react"]
+    "esm": {
+      "presets": [
+        "@babel/typescript",
+        [
+          "@babel/env",
+          {
+            "modules": false
+          }
+        ],
+        "@babel/react"
+      ]
     }
   }
 }
