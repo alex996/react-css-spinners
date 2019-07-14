@@ -1,6 +1,7 @@
+import './style.css'
 import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
-import { Ellipsis, Ring, Ripple } from '../index'
+import { Ellipsis, Ring, Ripple } from '../src'
 
 const Container = storyFn => (
   <div style={{ backgroundColor: '#20232a', padding: '1rem' }}>{storyFn()}</div>

@@ -1,5 +1,4 @@
 import { configure, addParameters } from '@storybook/react'
-import packageJson from '../package.json'
 
 function loadStories () {
   require('../stories/index.js')
@@ -7,7 +6,7 @@ function loadStories () {
 
 addParameters({
   options: {
-    brandUrl: packageJson.repository.url,
+    brandUrl: 'https://alex996.github.io/react-css-spinners/',
     showPanel: false
   }
 })

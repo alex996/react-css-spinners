@@ -1,5 +1,5 @@
-// Entrypoint for storybook and rollup. Styles are imported
-// via JS so they can be merged & extracted for UMD builds.
+// Entrypoint for rollup. Styles are imported via JS
+// so they can be merged & extracted for UMD builds.
 
 import './src/Ellipsis/ellipsis.css'
 
