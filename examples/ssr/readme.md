@@ -1,13 +1,25 @@
 # SSR Example
 
-Minimal demo of the spinners with server-side rendering using CJS bundle.
-
-> Don't forget to hydrate the app client-side.
+Minimal demo of the spinners with server-side rendering (using CJS bundle) and client-side hydration (using ESM bundle).
 
 ```sh
 # Install the deps
 npm i
 
-# Start the server
+# Start dev server
+npm run dev
+
+# Build prod bundle
+npm run build
+
+# Start prod server
 npm start
 ```
+
+# Notes
+
+If you decide to use this template, then don't forget to
+
+- implement live/HMR reload in dev (currently missing)
+- minify CSS assets in production
+- configure `contenthash` for client-side `.js` and `.css`

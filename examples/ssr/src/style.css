@@ -1,0 +1,6 @@
+@import "~react-css-spinners/css/style.css";
+
+#root {
+  background-color: #20232a;
+  padding: 1rem;
+}

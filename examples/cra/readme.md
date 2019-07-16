@@ -8,4 +8,10 @@ npm i
 
 # Start the server
 npm start
+
+# Build the bundle
+npm run build
+
+# Serve local build
+npm run serve
 ```

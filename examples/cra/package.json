@@ -2,17 +2,21 @@
   "name": "cra",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
+    "build": "SKIP_PREFLIGHT_CHECK=true react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "serve": "serve build"
+  },
   "dependencies": {
     "react": "latest",
     "react-css-spinners": "../..",
     "react-dom": "latest",
     "react-scripts": "latest"
   },
-  "scripts": {
-    "start": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "serve": "latest"
   },
   "browserslist": [
     ">0.2%",

@@ -4,12 +4,27 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "predev": "rm -rf dist",
+    "dev": "webpack --watch --mode development",
+    "prebuild": "rm -rf dist",
+    "build": "webpack --mode production --progress",
+    "start": "NODE_ENV=production node dist/main"
   },
   "dependencies": {
     "express": "latest",
     "react": "latest",
     "react-css-spinners": "file:../..",
     "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/preset-react": "latest",
+    "babel-loader": "latest",
+    "css-loader": "latest",
+    "mini-css-extract-plugin": "latest",
+    "nodemon-webpack-plugin": "latest",
+    "webpack": "latest",
+    "webpack-cli": "latest",
+    "webpack-node-externals": "latest"
   }
 }

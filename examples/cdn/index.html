@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>UMD Example</title>
+  <!-- node_modules is only used for testing. In prod, use unpkg.com (see readme) -->
   <link rel="stylesheet" href="./node_modules/react-css-spinners/css/style.min.css">
   <style>
     #root {
@@ -17,6 +18,7 @@
   <div id='root'></div>
   <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <!-- node_modules is only used for testing. In prod, use unpkg.com (see readme) -->
   <script src="./node_modules/react-css-spinners/umd/bundle.min.js"></script>
   <script>
     const { Ellipsis, Ring, Ripple } = ReactCssSpinners
