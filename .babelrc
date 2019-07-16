@@ -1,6 +1,15 @@
 {
   "presets": ["@babel/typescript", "@babel/env", "@babel/react"],
-  "plugins": ["@babel/transform-runtime"],
+  "plugins": [
+    "@babel/transform-runtime",
+    [
+      "transform-react-remove-prop-types",
+      {
+        "mode": "unsafe-wrap",
+        "ignoreFilenames": ["node_modules"]
+      }
+    ]
+  ],
   "env": {
     "esm": {
       "presets": [

@@ -66,13 +66,14 @@
     "@typescript-eslint/parser": "^1.12.0",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "commitizen": "^3.1.1",
     "coveralls": "^3.0.5",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^6.0.1",
     "eslint-config-standard": "^13.0.1",
     "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-jest": "^22.7.2",
+    "eslint-plugin-jest": "^22.8.0",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.14.2",
@@ -85,7 +86,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-test-renderer": "^16.8.6",
-    "rollup": "^1.16.7",
+    "rollup": "^1.17.0",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-copy": "^3.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
@@ -117,5 +118,8 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
   }
 }

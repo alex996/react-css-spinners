@@ -20,8 +20,10 @@ const plugins = [
   }),
   babel({
     extensions,
+    runtimeHelpers: true,
     exclude: 'node_modules/**',
-    runtimeHelpers: true
+    // remove prop-types, instead of unsafe-wrap
+    plugins: ['transform-react-remove-prop-types']
   }),
   copy({
     targets: [{ src: ['src/**/*.css'], dest: 'css' }]

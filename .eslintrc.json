@@ -28,6 +28,7 @@
   },
   "rules": {
     "@typescript-eslint/indent": "off",
+    "@typescript-eslint/member-delimiter-style": "off",
     "jsx-quotes": ["error", "prefer-single"]
   }
 }
