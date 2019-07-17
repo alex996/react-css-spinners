@@ -6,13 +6,13 @@
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
-  "unpkg": "umd/bundle.min.js",
+  "unpkg": "dist/bundle.min.js",
   "types": "src/index.ts",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css"
+  ],
   "files": [
-    "css",
-    "dist",
-    "umd"
+    "dist"
   ],
   "repository": {
     "type": "git",
@@ -29,11 +29,15 @@
   "homepage": "https://alex996.github.io/react-css-spinners/",
   "scripts": {
     "commit": "git-cz",
-    "prebuild": "rm -rf css dist umd",
+    "prebuild": "rm -rf dist",
     "build": "run-p build:*",
     "build:cjs": "babel src --out-dir dist --extensions '.ts,.tsx' --ignore '**/*.test.tsx'",
     "build:esm": "BABEL_ENV=esm babel src --out-dir dist/esm --extensions '.ts,.tsx' --ignore '**/*.test.tsx'",
     "build:umd": "rollup -c",
+    "postbuild": "run-p copy:*",
+    "copy": "rsync -zarvm --include='*/' --include='*.css' --exclude='*' src/",
+    "copy:cjs": "npm run copy dist",
+    "copy:esm": "npm run copy dist/esm",
     "lint": "eslint '**/*.{js,ts,tsx}'",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest",
@@ -48,6 +52,9 @@
     "predeploy": "npm run storybook:build",
     "deploy": "gh-pages -d storybook-static",
     "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
@@ -70,6 +77,7 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "commitizen": "^3.1.1",
     "coveralls": "^3.0.5",
+    "cpx": "^1.5.0",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^6.0.1",
     "eslint-config-standard": "^13.0.1",
@@ -89,7 +97,6 @@
     "react-test-renderer": "^16.8.6",
     "rollup": "^1.17.0",
     "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-copy": "^3.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-terser": "^5.1.1",
@@ -120,7 +127,9 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "dependencies": {
-    "prop-types": "^15.7.2"
+  "jest": {
+    "moduleNameMapper": {
+      "\\.css$": "<rootDir>/mocks/styleMock.js"
+    }
   }
 }

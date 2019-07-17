@@ -12,8 +12,9 @@ module.exports = [
     },
     module: {
       rules: [
-        // If you move this loader to server config below, it will bundle but then
-        // fail at runtime trying to require('main.css'). Keeping here instead.
+        // mini-css-extract-plugin is not meant for SSR. Instead, extract the
+        // CSS as part of the client build (or use isomorphic-style-loader).
+        // https://github.com/webpack-contrib/mini-css-extract-plugin/issues/90
         {
           test: /\.css$/,
           use: [
@@ -38,7 +39,14 @@ module.exports = [
     target: 'node',
     devtool: 'source-map',
     entry: './src/server.js',
-    externals: [nodeExternals()],
+    externals: [
+      nodeExternals({
+        // Bundle RCS so that css-loader detects its CSS and strips
+        // require('./style.css') statements. Otherwise, the build
+        // will fail with SyntaxError: Unexpected token . at runtime.
+        whitelist: /react-css-spinners\/*$/
+      })
+    ],
     node: {
       // By default, webpack uses the real dirname (src) relative to the context
       // option. If you set it to false, it will use the absolute path to /dist.
@@ -53,6 +61,13 @@ module.exports = [
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader'
+          }
+        },
+        {
+          test: /\.css$/i,
+          loader: 'css-loader',
+          options: {
+            onlyLocals: true // CSS is read, but not bundled
           }
         }
       ]

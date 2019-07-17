@@ -2,9 +2,8 @@ import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
 import postcss from 'rollup-plugin-postcss'
-import copy from 'rollup-plugin-copy'
 
-const input = 'index.ts'
+const input = 'src/index.ts'
 
 const globals = {
   react: 'React'
@@ -24,9 +23,6 @@ const plugins = [
     exclude: 'node_modules/**',
     // remove prop-types, instead of unsafe-wrap
     plugins: ['transform-react-remove-prop-types']
-  }),
-  copy({
-    targets: [{ src: ['src/**/*.css'], dest: 'css' }]
   })
 ]
 
@@ -42,12 +38,12 @@ export default [
     external,
     output: {
       ...output,
-      file: 'umd/bundle.js'
+      file: 'dist/bundle.js'
     },
     plugins: [
       ...plugins,
       postcss({
-        extract: 'css/style.css'
+        extract: 'dist/style.css'
       })
     ]
   },
@@ -56,12 +52,12 @@ export default [
     external,
     output: {
       ...output,
-      file: 'umd/bundle.min.js'
+      file: 'dist/bundle.min.js'
     },
     plugins: [
       ...plugins,
       postcss({
-        extract: 'css/style.min.css',
+        extract: 'dist/style.min.css',
         minimize: true
       }),
       terser()

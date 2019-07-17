@@ -1,4 +1,3 @@
-import './style.css'
 import React from 'react'
 import { storiesOf, addDecorator, RenderFunction } from '@storybook/react'
 import { Ellipsis, Ring, Ripple } from '../src'

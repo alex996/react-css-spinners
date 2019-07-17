@@ -30,10 +30,10 @@ For development and debugging, use an unminified version
 ```html
 <link
   rel="stylesheet" crossorigin="anonymous"
-  href="https://unpkg.com/react-css-spinners@latest/css/style.css"
+  href="https://unpkg.com/react-css-spinners@latest/dist/style.css"
 />
 
-<script src="https://unpkg.com/react-css-spinners@latest/umd/bundle.js" crossorigin></script>
+<script src="https://unpkg.com/react-css-spinners@latest/dist/bundle.js" crossorigin></script>
 ```
 
 In production, use a minified and optimized version
@@ -41,26 +41,25 @@ In production, use a minified and optimized version
 ```html
 <link
   rel="stylesheet" crossorigin="anonymous"
-  href="https://unpkg.com/react-css-spinners@latest/css/style.min.css"
+  href="https://unpkg.com/react-css-spinners@latest/dist/style.min.css"
 />
 
-<script src="https://unpkg.com/react-css-spinners@latest/umd/bundle.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-css-spinners@latest/dist/bundle.min.js" crossorigin></script>
 ```
 
 ## Getting Started
 
 Make sure that your build toolchain supports CSS files. For example, with Webpack you can use [`css-loader`](https://github.com/webpack-contrib/css-loader) and/or [`sass-loader`](https://github.com/webpack-contrib/sass-loader). If you have Rollup, consider [`rollup-plugin-postcss`](https://github.com/egoist/,rollup-plugin-postcss). Alternatively, Parcel has support for `.css` files and `@import`s out of the box.
 
-You have the choice of extracting CSS into an external stylesheet (ex: [`mini-css-extract-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin)) or injecting CSS modules at runtime (ex: [`css-loader`](https://github.com/webpack-contrib/css-loader#modules)). For minimal CSS fotprint, you should also minify the styles in production (see [this](https://github.com/webpack-contrib/mini-css-extract-plugin#minimizing-for-production)).
+You have the choice of extracting CSS into an external stylesheet (ex: [`mini-css-extract-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin)) or injecting CSS modules at runtime (ex: [`style-loader`](https://github.com/webpack-contrib/style-loader)). Both are only intended for browsers, so if you need SSR support, you can either not bundle CSS server-side ([`onlyLocals` option in `css-loader`](https://github.com/webpack-contrib/css-loader#onlylocals)) and instead extract/inject it client-side, or use [`isomorphic-style-loader`](https://github.com/kriasoft/isomorphic-style-loader) for critical path extraction. There is also [`babel-plugin-css-modules-transform`](https://github.com/michalkvasnicak/babel-plugin-css-modules-transform) that can strip away `require('./style.css')` statements (you'd need to include `react-css-spinners` for `babel-loader`).
 
 Also, be sure to install `react` (and `react-dom`) as it's a peer dependency of this library. If you use CommonJS exports, you'd also need to install `@babel/runtime`.
 
 ## Usage
 
-Import any spinner of your choice along with its styles, and render it as usual.
+Import any spinner of your choice and use it as usual - the styles will be auto-imported for you. You can safely use named imports, as both JS and CSS will go through dead code elimination in production builds!
 
 ```js
-import 'react-css-spinners/css/ellipsis.css'
 import React from 'react'
 import { render } from 'react-dom'
 import { Ellipsis } from 'react-css-spinners'
@@ -73,18 +72,6 @@ const Loader = props => (
 )
 
 render(<Loader />, document.getElementById('app'))
-```
-
-You can also import component styles separately, for example in `style.scss`
-
-```scss
-@import '~react-css-spinners/css/ellipsis.css';
-```
-
-Finally, you could also import all styles at once (discouraged)
-
-```scss
-@import '~react-css-spinners/css/style.css';
 ```
 
 ## Examples
@@ -103,4 +90,4 @@ Prior, it used to embed CSS in a `style` tag with each component, but that led t
 
 ## Copyright
 
-CSS spinners from [loading.io](https://loading.io) under CC0.
+CSS spinners from [loading.io](https://loading.io/css/) under CC0.
