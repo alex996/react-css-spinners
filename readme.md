@@ -53,7 +53,7 @@ Make sure that your build toolchain supports CSS files. For example, with Webpac
 
 You have the choice of extracting CSS into an external stylesheet (ex: [`mini-css-extract-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin)) or injecting CSS modules at runtime (ex: [`style-loader`](https://github.com/webpack-contrib/style-loader)). Both are only intended for browsers, so if you need SSR support, you can either not bundle CSS server-side ([`onlyLocals` option in `css-loader`](https://github.com/webpack-contrib/css-loader#onlylocals)) and instead extract/inject it client-side, or use [`isomorphic-style-loader`](https://github.com/kriasoft/isomorphic-style-loader) for critical path extraction. There is also [`babel-plugin-css-modules-transform`](https://github.com/michalkvasnicak/babel-plugin-css-modules-transform) that can strip away `require('./style.css')` statements (you'd need to include `react-css-spinners` for `babel-loader`).
 
-Also, be sure to install `react` (and `react-dom`) as it's a peer dependency of this library. If you use CommonJS exports, you'd also need to install `@babel/runtime`.
+For minimal CSS fotprint, you should also minify the styles in production (see [this](https://github.com/webpack-contrib/mini-css-extract-plugin#minimizing-for-production)). Also, be sure to install `react` (and `react-dom`) as it's a peer dependency of this library. If you use CommonJS exports, you'd also need to install `@babel/runtime`.
 
 ## Usage
 
@@ -84,9 +84,7 @@ You will find further demos under `/examples` folder
 
 ## Styling
 
-This library doesn't make assumptions about the end user's styling solution. As such, it doesn't lock you into a CSS-in-JS library, such as `emotion` or `styled-components`, to avoid bundle size overhead. It doesn't rely on CSS modules either, since they have limited SSR support depending on the bundler (as in `rollup` for example).
-
-Prior, it used to embed CSS in a `style` tag with each component, but that led to duplication if you used the same spinner more than once. Now, the library ships with dedicated CSS files which you can manually import for each component, thus minimizing overall CSS footprint.
+This library doesn't make assumptions about the end user's styling solution. As such, it doesn't lock you into a CSS-in-JS library, such as `emotion` or `styled-components`, to avoid bundle size overhead. It doesn't rely on CSS modules either, since they have limited SSR support depending on the bundler (as in `rollup` for example). Prior, it used to embed CSS in a `style` tag with each component, but that led to duplication if you used the same spinner more than once.
 
 ## Copyright
 
