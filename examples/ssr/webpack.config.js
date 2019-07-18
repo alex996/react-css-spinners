@@ -17,12 +17,7 @@ module.exports = [
         // https://github.com/webpack-contrib/mini-css-extract-plugin/issues/90
         {
           test: /\.css$/,
-          use: [
-            {
-              loader: MiniCssExtractPlugin.loader
-            },
-            'css-loader'
-          ]
+          use: [MiniCssExtractPlugin.loader, 'css-loader']
         },
         {
           test: /\.js$/,

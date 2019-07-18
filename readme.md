@@ -7,23 +7,132 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![MIT License](https://img.shields.io/npm/l/react-css-spinners.svg)](https://github.com/alex996/react-css-spinners/blob/master/LICENSE)
 
-CSS-only spinners for React in TypeScript. See a [live demo](https://alex996.github.io/react-css-spinners).
+CSS-only spinners for React from [loading.io](https://loading.io/css/)
 
-## Installation
+- :scissors: &nbsp; **Zero** dependencies
+- :collision: &nbsp; Written in **TypeScript**
+- :rocket: &nbsp; **Tree-shaking** baked in
+- :nail_care: &nbsp; No extra **CSS** imports
 
-### npm
+## Demo
+
+Browse components and explore their props live in [Storybook](https://alex996.github.io/react-css-spinners).
+
+## Quick Start
+
+Install the package with `npm`
 
 ```sh
 npm i react-css-spinners
 ```
 
-### yarn
+or `yarn` - whichever you prefer
 
 ```sh
 yarn add react-css-spinners
 ```
 
-### unpkg
+Import any spinner you like
+
+```js
+import { Ellipsis } from 'react-css-spinners'
+```
+
+and use it like any other component
+
+```js
+const Loader = props => (
+  <Ellipsis />
+)
+```
+
+## Prerequisites
+
+This library imports its styles through JavaScript. To make it work, you may need to tweak your config.
+
+### Create-React-App
+
+No changes are required, as CRA already handles CSS. Feel free to skip this! :tada:
+
+### Webpack
+
+First, you'd need [`css-loader`](https://github.com/webpack-contrib/css-loader) to resolve CSS imports
+
+```sh
+npm i -D css-loader
+```
+
+Next, to render your styles, you can either
+
+- extract CSS into an external file (e.g. `style.css`) and load it using `<link>` (with [`mini-css-extract-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin)) or
+- inject CSS into `<style>` tag(s) in `<head>` section at runtime (i.e. when JS is executing, with [`style-loader`](https://github.com/webpack-contrib/style-loader))
+
+Generally, you'd want to generate your CSS only once at build time, so we'll go with the former
+
+```sh
+npm i -D mini-css-extract-plugin
+```
+
+Lastly, add the following to your `webpack.config.js`
+
+```js
+module: {
+  rules: [
+    {
+      test: /\.css$/,
+      use: [MiniCssExtractPlugin.loader, 'css-loader']
+    }
+  ]
+},
+plugins: [new MiniCssExtractPlugin()]
+```
+
+For more advanced options (caching, minification, etc.), see [`mini-css-extract-plugin` docs](https://github.com/webpack-contrib/mini-css-extract-plugin).
+
+### Webpack with SSR
+
+As with the config above, you'd need `css-loader`. Unfortunately, you can't use either [`mini-css-extract-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/90) or [`style-loader`](https://github.com/webpack-contrib/style-loader/pull/159) with server-side rendering. One workaround would be to ignore CSS in server config and instead extract it out on the front-end. In your `webpack.config.js`
+
+```js
+module.exports = [
+  {
+    module: {
+      rules: [
+        {
+          test: /\.css$/,
+          use: [MiniCssExtractPlugin.loader, 'css-loader']
+        }
+      ]
+    },
+    plugins: [new MiniCssExtractPlugin()]
+  },
+  {
+    module: {
+      rules: [
+        {
+          test: /\.css$/i,
+          loader: 'css-loader',
+          options: {
+            onlyLocals: true
+          }
+        }
+      ]
+    }
+  }
+]
+```
+
+There are a few other caveats, so it's best to check with a working [`SSR example`](./examples/ssr). An alternative to this would be to use [`isomorphic-style-loader`](https://github.com/kriasoft/isomorphic-style-loader). There is also [`babel-plugin-css-modules-transform`](https://github.com/michalkvasnicak/babel-plugin-css-modules-transform) that can strip away `require` statements on CSS files (you'd need to include `react-css-spinners` under `babel-loader`).
+
+### Rollup / Parcel
+
+If you use Rollup, consider [`rollup-plugin-postcss`](https://github.com/egoist/,rollup-plugin-postcss). It exposes an `extract` option to extract your styles into a `.css` file. Alternatively, you could use [`rollup-plugin-scss`](https://github.com/thgh/rollup-plugin-scss) or [`rollup-plugin-css-only`](https://github.com/thgh/rollup-plugin-css-only) which would do the same thing.
+
+Parcel comes with [built-in support](https://parceljs.org/css.html) for `.css` files and `@import`s, so this library should work out of the box.
+
+## CDN
+
+> Be advised that it's recommended to use NPM for best performance and minimal CSS & JS footprint.
 
 For development and debugging, use an unminified version
 
@@ -47,33 +156,6 @@ In production, use a minified and optimized version
 <script src="https://unpkg.com/react-css-spinners@latest/dist/bundle.min.js" crossorigin></script>
 ```
 
-## Getting Started
-
-Make sure that your build toolchain supports CSS files. For example, with Webpack you can use [`css-loader`](https://github.com/webpack-contrib/css-loader) and/or [`sass-loader`](https://github.com/webpack-contrib/sass-loader). If you have Rollup, consider [`rollup-plugin-postcss`](https://github.com/egoist/,rollup-plugin-postcss). Alternatively, Parcel has support for `.css` files and `@import`s out of the box.
-
-You have the choice of extracting CSS into an external stylesheet (ex: [`mini-css-extract-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin)) or injecting CSS modules at runtime (ex: [`style-loader`](https://github.com/webpack-contrib/style-loader)). Both are only intended for browsers, so if you need SSR support, you can either not bundle CSS server-side ([`onlyLocals` option in `css-loader`](https://github.com/webpack-contrib/css-loader#onlylocals)) and instead extract/inject it client-side, or use [`isomorphic-style-loader`](https://github.com/kriasoft/isomorphic-style-loader) for critical path extraction. There is also [`babel-plugin-css-modules-transform`](https://github.com/michalkvasnicak/babel-plugin-css-modules-transform) that can strip away `require('./style.css')` statements (you'd need to include `react-css-spinners` for `babel-loader`).
-
-For minimal CSS fotprint, you should also minify the styles in production (see [this](https://github.com/webpack-contrib/mini-css-extract-plugin#minimizing-for-production)). Also, be sure to install `react` (and `react-dom`) as it's a peer dependency of this library. If you use CommonJS exports, you'd also need to install `@babel/runtime`.
-
-## Usage
-
-Import any spinner of your choice and use it as usual - the styles will be auto-imported for you. You can safely use named imports, as both JS and CSS will go through dead code elimination in production builds!
-
-```js
-import React from 'react'
-import { render } from 'react-dom'
-import { Ellipsis } from 'react-css-spinners'
-
-const Loader = props => (
-  <>
-    <Ellipsis />
-    <p>Loading...</p>
-  </>
-)
-
-render(<Loader />, document.getElementById('app'))
-```
-
 ## Examples
 
 You will find further demos under `/examples` folder
@@ -82,10 +164,6 @@ You will find further demos under `/examples` folder
 - [Create-React-App](./examples/cra)
 - [Server-Side Rendering](./examples/ssr)
 
-## Styling
-
-This library doesn't make assumptions about the end user's styling solution. As such, it doesn't lock you into a CSS-in-JS library, such as `emotion` or `styled-components`, to avoid bundle size overhead. It doesn't rely on CSS modules either, since they have limited SSR support depending on the bundler (as in `rollup` for example). Prior, it used to embed CSS in a `style` tag with each component, but that led to duplication if you used the same spinner more than once.
-
 ## Copyright
 
-CSS spinners from [loading.io](https://loading.io/css/) under CC0.
+CSS spinners from [loading.io](https://loading.io/css/) are used under [CC0 license](https://creativecommons.org/share-your-work/public-domain/cc0/).
