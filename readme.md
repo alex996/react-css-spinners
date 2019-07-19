@@ -7,6 +7,8 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![MIT License](https://img.shields.io/npm/l/react-css-spinners.svg)](https://github.com/alex996/react-css-spinners/blob/master/LICENSE)
 
+![spinners](https://user-images.githubusercontent.com/15240969/61506027-cc63b180-a9ae-11e9-8569-9ee44ef3567c.gif)
+
 CSS-only spinners for React from [loading.io](https://loading.io/css/)
 
 - :scissors: &nbsp; **Zero** dependencies
@@ -16,7 +18,7 @@ CSS-only spinners for React from [loading.io](https://loading.io/css/)
 
 ## Demo
 
-Browse components and explore their props live in [Storybook](https://alex996.github.io/react-css-spinners).
+Browse components and explore their props with [Storybook](https://alex996.github.io/react-css-spinners).
 
 ## Quick Start
 
@@ -108,6 +110,7 @@ module.exports = [
   },
   {
     module: {
+      target: 'node',
       rules: [
         {
           test: /\.css$/i,
