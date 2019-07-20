@@ -1,6 +1,6 @@
 # SSR Example
 
-Minimal demo of the spinners with server-side rendering (using CJS bundle) and client-side hydration (using ESM bundle).
+Minimal demo of the spinners with server-side rendering (CJS bundle) and client-side hydration (ESM bundle).
 
 ```sh
 # Install the deps

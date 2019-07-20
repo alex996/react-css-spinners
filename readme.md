@@ -40,7 +40,7 @@ Import any spinner you like
 import { Ellipsis } from 'react-css-spinners'
 ```
 
-and use it like any other component
+and then it's business as usual
 
 ```js
 const Loader = props => (
@@ -113,7 +113,7 @@ module.exports = [
       target: 'node',
       rules: [
         {
-          test: /\.css$/i,
+          test: /\.css$/,
           loader: 'css-loader',
           options: {
             onlyLocals: true
@@ -125,7 +125,7 @@ module.exports = [
 ]
 ```
 
-There are a few other caveats, so it's best to check with a working [`SSR example`](./examples/ssr). An alternative to this would be to use [`isomorphic-style-loader`](https://github.com/kriasoft/isomorphic-style-loader). There is also [`babel-plugin-css-modules-transform`](https://github.com/michalkvasnicak/babel-plugin-css-modules-transform) that can strip away `require` statements on CSS files (you'd need to include `react-css-spinners` under `babel-loader`).
+There are a few other caveats, so it's best to check with a working [SSR example](./examples/ssr). An alternative to this would be to use [`isomorphic-style-loader`](https://github.com/kriasoft/isomorphic-style-loader). There is also [`babel-plugin-css-modules-transform`](https://github.com/michalkvasnicak/babel-plugin-css-modules-transform) that can strip away `require` statements on CSS files (you'd need to include `react-css-spinners` under `babel-loader`).
 
 ### Rollup / Parcel
 

@@ -14,7 +14,7 @@ module.exports = [
       rules: [
         // mini-css-extract-plugin is not meant for SSR. Instead, extract the
         // CSS as part of the client build (or use isomorphic-style-loader).
-        // https://github.com/webpack-contrib/mini-css-extract-plugin/issues/90
+        // See webpack-contrib/mini-css-extract-plugin#90
         {
           test: /\.css$/,
           use: [MiniCssExtractPlugin.loader, 'css-loader']
@@ -59,7 +59,7 @@ module.exports = [
           }
         },
         {
-          test: /\.css$/i,
+          test: /\.css$/,
           loader: 'css-loader',
           options: {
             onlyLocals: true // CSS is read, but not bundled

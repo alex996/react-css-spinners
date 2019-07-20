@@ -8,7 +8,7 @@ const app = express()
 
 const html = renderToString(<App />)
 
-// Note there must be no whitespace around ${html} (react@10879)
+// Must be no whitespace around ${html}. See facebook/react#10879
 const body = `
   <!DOCTYPE html>
   <html lang="en">
