@@ -1,70 +1,71 @@
 .rcs-grid {
+  --rcs-grid-ratio: calc(var(--rcs-grid-size) / 64);
   display: inline-block;
   position: relative;
-  width: 64px;
-  height: 64px;
+  width: var(--rcs-grid-size);
+  height: var(--rcs-grid-size);
 }
 
 .rcs-grid div {
   position: absolute;
-  width: 13px;
-  height: 13px;
+  width: calc(13 * var(--rcs-grid-ratio));
+  height: calc(13 * var(--rcs-grid-ratio));
   border-radius: 50%;
-  background: #fff;
+  background: var(--rcs-grid-color);
   animation: rcs-grid 1.2s linear infinite;
 }
 
 .rcs-grid div:nth-child(1) {
-  top: 6px;
-  left: 6px;
+  top: calc(6 * var(--rcs-grid-ratio));
+  left: calc(6 * var(--rcs-grid-ratio));
   animation-delay: 0s;
 }
 
 .rcs-grid div:nth-child(2) {
-  top: 6px;
-  left: 26px;
+  top: calc(6 * var(--rcs-grid-ratio));
+  left: calc(26 * var(--rcs-grid-ratio));
   animation-delay: -0.4s;
 }
 
 .rcs-grid div:nth-child(3) {
-  top: 6px;
-  left: 45px;
+  top: calc(6 * var(--rcs-grid-ratio));
+  left: calc(45 * var(--rcs-grid-ratio));
   animation-delay: -0.8s;
 }
 
 .rcs-grid div:nth-child(4) {
-  top: 26px;
-  left: 6px;
+  top: calc(26 * var(--rcs-grid-ratio));
+  left: calc(6 * var(--rcs-grid-ratio));
   animation-delay: -0.4s;
 }
 
 .rcs-grid div:nth-child(5) {
-  top: 26px;
-  left: 26px;
+  top: calc(26 * var(--rcs-grid-ratio));
+  left: calc(26 * var(--rcs-grid-ratio));
   animation-delay: -0.8s;
 }
 
 .rcs-grid div:nth-child(6) {
-  top: 26px;
-  left: 45px;
+  top: calc(26 * var(--rcs-grid-ratio));
+  left: calc(45 * var(--rcs-grid-ratio));
   animation-delay: -1.2s;
 }
 
 .rcs-grid div:nth-child(7) {
-  top: 45px;
-  left: 6px;
+  top: calc(45 * var(--rcs-grid-ratio));
+  left: calc(6 * var(--rcs-grid-ratio));
   animation-delay: -0.8s;
 }
 
 .rcs-grid div:nth-child(8) {
-  top: 45px;
-  left: 26px;
+  top: calc(45 * var(--rcs-grid-ratio));
+  left: calc(26 * var(--rcs-grid-ratio));
   animation-delay: -1.2s;
 }
 
 .rcs-grid div:nth-child(9) {
-  top: 45px;
-  left: 45px;
+  top: calc(45 * var(--rcs-grid-ratio));
+  left: calc(45 * var(--rcs-grid-ratio));
   animation-delay: -1.6s;
 }
 

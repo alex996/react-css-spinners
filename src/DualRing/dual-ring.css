@@ -1,18 +1,19 @@
 .rcs-dual-ring {
+  --rcs-dual-ring-ratio: calc(var(--rcs-dual-ring-size) / 64);
   display: inline-block;
-  width: 64px;
-  height: 64px;
+  width: var(--rcs-dual-ring-size);
+  height: var(--rcs-dual-ring-size);
 }
 
 .rcs-dual-ring:after {
   content: " ";
   display: block;
-  width: 46px;
-  height: 46px;
+  width: calc(46 * var(--rcs-dual-ring-ratio));
+  height: calc(46 * var(--rcs-dual-ring-ratio));
   margin: 4px;
   border-radius: 50%;
-  border: 5px solid #fff;
-  border-color: #fff transparent;
+  border: var(--rcs-dual-ring-thickness) solid var(--rcs-dual-ring-color);
+  border-color: var(--rcs-dual-ring-color) transparent;
   animation: rcs-dual-ring 1.2s linear infinite;
 }
 

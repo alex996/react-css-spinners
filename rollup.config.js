@@ -6,30 +6,25 @@ import postcss from 'rollup-plugin-postcss'
 const input = 'src/index.ts'
 
 const globals = {
-  react: 'React'
+  react: 'React',
+  'prop-types': 'PropTypes'
 }
 
 const external = Object.keys(globals)
 
 const extensions = ['.ts', '.tsx']
 
-const plugins = [
-  resolve({
-    extensions
-  }),
-  babel({
-    extensions,
-    runtimeHelpers: true,
-    exclude: 'node_modules/**',
-    // remove prop-types, instead of unsafe-wrap
-    plugins: ['transform-react-remove-prop-types']
-  })
-]
-
 const output = {
   globals,
   name: 'ReactCssSpinners',
   format: 'umd'
+}
+
+const babelOptions = {
+  extensions,
+  babelrc: false, // to ignore @babel/transform-runtime
+  exclude: 'node_modules/**',
+  presets: ['@babel/typescript', '@babel/env', '@babel/react']
 }
 
 export default [
@@ -41,7 +36,10 @@ export default [
       file: 'dist/bundle.js'
     },
     plugins: [
-      ...plugins,
+      resolve({
+        extensions
+      }),
+      babel(babelOptions),
       postcss({
         extract: 'dist/style.css'
       })
@@ -55,7 +53,13 @@ export default [
       file: 'dist/bundle.min.js'
     },
     plugins: [
-      ...plugins,
+      resolve({
+        extensions
+      }),
+      babel({
+        ...babelOptions,
+        plugins: ['transform-react-remove-prop-types']
+      }),
       postcss({
         extract: 'dist/style.min.css',
         minimize: true

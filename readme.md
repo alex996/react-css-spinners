@@ -145,7 +145,8 @@ For development and debugging, use an unminified version
   href="https://unpkg.com/react-css-spinners@latest/dist/style.css"
 />
 
-<script src="https://unpkg.com/react-css-spinners@latest/dist/bundle.js" crossorigin></script>
+<!-- Include react, react-dom, and prop-types development <script> tags above -->
+<script crossorigin src="https://unpkg.com/react-css-spinners@latest/dist/bundle.js"></script>
 ```
 
 In production, use a minified and optimized version
@@ -156,8 +157,13 @@ In production, use a minified and optimized version
   href="https://unpkg.com/react-css-spinners@latest/dist/style.min.css"
 />
 
-<script src="https://unpkg.com/react-css-spinners@latest/dist/bundle.min.js" crossorigin></script>
+<!-- Include react and react-dom production <script> tags above -->
+<script crossorigin src="https://unpkg.com/react-css-spinners@latest/dist/bundle.min.js"></script>
 ```
+
+## Browser Support
+
+To allow for customization, the library uses [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) which are [supported](https://caniuse.com/#feat=css-variables) on all major browsers except IE 11. Regular `style` prop would not suffice because some spinners use `@keyframes` rules that vary based on props.
 
 ## Examples
 

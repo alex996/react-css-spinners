@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="rcs-hourglass"
+  style={
+    Object {
+      "--rcs-hourglass-color": "#fff",
+      "--rcs-hourglass-size": "64px",
+    }
+  }
+/>
+`;

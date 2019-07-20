@@ -1,8 +1,8 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { Ring } from './'
+import { Circle } from './'
 
 it('renders correctly', (): void => {
-  const tree = renderer.create(<Ring />).toJSON()
+  const tree = renderer.create(<Circle />).toJSON()
   expect(tree).toMatchSnapshot()
 })

@@ -2,15 +2,15 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="rcs-ellipsis"
+  className="rcs-wave"
   style={
     Object {
-      "--rcs-ellipsis-color": "#fff",
-      "--rcs-ellipsis-size": "64px",
+      "--rcs-wave-color": "#fff",
+      "--rcs-wave-size": "64px",
+      "--rcs-wave-thickness": "12px",
     }
   }
 >
-  <div />
   <div />
   <div />
   <div />

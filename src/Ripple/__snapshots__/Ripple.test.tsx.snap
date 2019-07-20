@@ -3,6 +3,13 @@
 exports[`renders correctly 1`] = `
 <div
   className="rcs-ripple"
+  style={
+    Object {
+      "--rcs-ripple-color": "#fff",
+      "--rcs-ripple-size": "64px",
+      "--rcs-ripple-thickness": "4px",
+    }
+  }
 >
   <div />
   <div />

@@ -1,5 +1,14 @@
 {
-  "presets": ["@babel/typescript", "@babel/env", "@babel/react"],
+  "presets": [
+    "@babel/typescript",
+    [
+      "@babel/env",
+      {
+        "targets": "node 10"
+      }
+    ],
+    "@babel/react"
+  ],
   "plugins": [
     "@babel/transform-runtime",
     [

@@ -2,14 +2,18 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="rcs-ellipsis"
+  className="rcs-roller"
   style={
     Object {
-      "--rcs-ellipsis-color": "#fff",
-      "--rcs-ellipsis-size": "64px",
+      "--rcs-roller-color": "#fff",
+      "--rcs-roller-size": "64px",
     }
   }
 >
+  <div />
+  <div />
+  <div />
+  <div />
   <div />
   <div />
   <div />

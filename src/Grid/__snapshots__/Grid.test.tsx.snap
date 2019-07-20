@@ -2,14 +2,19 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="rcs-ellipsis"
+  className="rcs-grid"
   style={
     Object {
-      "--rcs-ellipsis-color": "#fff",
-      "--rcs-ellipsis-size": "64px",
+      "--rcs-grid-color": "#fff",
+      "--rcs-grid-size": "64px",
     }
   }
 >
+  <div />
+  <div />
+  <div />
+  <div />
+  <div />
   <div />
   <div />
   <div />

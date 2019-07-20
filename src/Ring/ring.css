@@ -1,21 +1,22 @@
 .rcs-ring {
+  --rcs-ring-ratio: calc(var(--rcs-ring-size) / 64);
   display: inline-block;
   position: relative;
-  width: 64px;
-  height: 64px;
+  width: var(--rcs-ring-size);
+  height: var(--rcs-ring-size);
 }
 
 .rcs-ring div {
   box-sizing: border-box;
   display: block;
   position: absolute;
-  width: 51px;
-  height: 51px;
-  margin: 6px;
-  border: 6px solid #fff;
+  width: calc(51 * var(--rcs-ring-ratio));
+  height: calc(51 * var(--rcs-ring-ratio));
+  margin: calc(6 * var(--rcs-ring-ratio));
+  border: var(--rcs-ring-thickness) solid var(--rcs-ring-color);
   border-radius: 50%;
   animation: rcs-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
+  border-color: var(--rcs-ring-color) transparent transparent transparent;
 }
 
 .rcs-ring div:nth-child(1) {

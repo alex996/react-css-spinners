@@ -29,6 +29,7 @@
   "rules": {
     "@typescript-eslint/indent": "off",
     "@typescript-eslint/member-delimiter-style": "off",
+    "@typescript-eslint/no-object-literal-type-assertion": "off",
     "jsx-quotes": ["error", "prefer-single"]
   }
 }

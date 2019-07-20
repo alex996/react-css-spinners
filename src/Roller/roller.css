@@ -1,24 +1,27 @@
 .rcs-roller {
+  --rcs-roller-ratio: calc(var(--rcs-roller-size) / 64);
   display: inline-block;
   position: relative;
-  width: 64px;
-  height: 64px;
+  width: var(--rcs-roller-size);
+  height: var(--rcs-roller-size);
 }
 
 .rcs-roller div {
   animation: rcs-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  transform-origin: 32px 32px;
+  transform-origin: calc(32 * var(--rcs-roller-ratio))
+    calc(32 * var(--rcs-roller-ratio));
 }
 
 .rcs-roller div:after {
   content: " ";
   display: block;
   position: absolute;
-  width: 6px;
-  height: 6px;
+  width: calc(6 * var(--rcs-roller-ratio));
+  height: calc(6 * var(--rcs-roller-ratio));
   border-radius: 50%;
-  background: #fff;
-  margin: -3px 0 0 -3px;
+  background: var(--rcs-roller-color);
+  margin: calc(-3 * var(--rcs-roller-ratio)) 0 0
+    calc(-3 * var(--rcs-roller-ratio));
 }
 
 .rcs-roller div:nth-child(1) {
@@ -26,8 +29,8 @@
 }
 
 .rcs-roller div:nth-child(1):after {
-  top: 50px;
-  left: 50px;
+  top: calc(50 * var(--rcs-roller-ratio));
+  left: calc(50 * var(--rcs-roller-ratio));
 }
 
 .rcs-roller div:nth-child(2) {
@@ -35,8 +38,8 @@
 }
 
 .rcs-roller div:nth-child(2):after {
-  top: 54px;
-  left: 45px;
+  top: calc(54 * var(--rcs-roller-ratio));
+  left: calc(45 * var(--rcs-roller-ratio));
 }
 
 .rcs-roller div:nth-child(3) {
@@ -44,8 +47,8 @@
 }
 
 .rcs-roller div:nth-child(3):after {
-  top: 57px;
-  left: 39px;
+  top: calc(57 * var(--rcs-roller-ratio));
+  left: calc(39 * var(--rcs-roller-ratio));
 }
 
 .rcs-roller div:nth-child(4) {
@@ -53,8 +56,8 @@
 }
 
 .rcs-roller div:nth-child(4):after {
-  top: 58px;
-  left: 32px;
+  top: calc(58 * var(--rcs-roller-ratio));
+  left: calc(32 * var(--rcs-roller-ratio));
 }
 
 .rcs-roller div:nth-child(5) {
@@ -62,16 +65,16 @@
 }
 
 .rcs-roller div:nth-child(5):after {
-  top: 57px;
-  left: 25px;
+  top: calc(57 * var(--rcs-roller-ratio));
+  left: calc(25 * var(--rcs-roller-ratio));
 }
 .rcs-roller div:nth-child(6) {
   animation-delay: -0.216s;
 }
 
 .rcs-roller div:nth-child(6):after {
-  top: 54px;
-  left: 19px;
+  top: calc(54 * var(--rcs-roller-ratio));
+  left: calc(19 * var(--rcs-roller-ratio));
 }
 
 .rcs-roller div:nth-child(7) {
@@ -79,8 +82,8 @@
 }
 
 .rcs-roller div:nth-child(7):after {
-  top: 50px;
-  left: 14px;
+  top: calc(50 * var(--rcs-roller-ratio));
+  left: calc(14 * var(--rcs-roller-ratio));
 }
 
 .rcs-roller div:nth-child(8) {
@@ -88,8 +91,8 @@
 }
 
 .rcs-roller div:nth-child(8):after {
-  top: 45px;
-  left: 10px;
+  top: calc(45 * var(--rcs-roller-ratio));
+  left: calc(10 * var(--rcs-roller-ratio));
 }
 
 @keyframes rcs-roller {

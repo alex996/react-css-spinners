@@ -1,13 +1,36 @@
 import './ellipsis.css'
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import PropTypes from 'prop-types'
+import { clsx } from '../utils'
 
-interface EllipsisProps {
+interface Props {
   className?: string
+  color?: string
+  size?: number
+  style?: CSSProperties
 }
 
-const Ellipsis = ({ className = '' }: EllipsisProps): JSX.Element => (
-  <div className={`rcs-ellipsis${className ? ` ${className}` : ''}`}>
+interface Styles extends CSSProperties {
+  '--rcs-ellipsis-color': string
+  '--rcs-ellipsis-size': string
+}
+
+const Ellipsis = ({
+  className,
+  color = '#fff',
+  size = 64,
+  style
+}: Props): JSX.Element => (
+  <div
+    className={clsx('rcs-ellipsis', className)}
+    style={
+      {
+        '--rcs-ellipsis-color': color,
+        '--rcs-ellipsis-size': `${size}px`,
+        ...style
+      } as Styles
+    }
+  >
     <div />
     <div />
     <div />
@@ -16,7 +39,10 @@ const Ellipsis = ({ className = '' }: EllipsisProps): JSX.Element => (
 )
 
 Ellipsis.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  color: PropTypes.string,
+  size: PropTypes.number,
+  style: PropTypes.object
 }
 
 export default Ellipsis
