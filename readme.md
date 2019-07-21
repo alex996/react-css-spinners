@@ -163,7 +163,7 @@ In production, use a minified and optimized version
 
 ## Browser Support
 
-To allow for customization, the library uses [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) which are [supported](https://caniuse.com/#feat=css-variables) on all major browsers except IE 11. Regular `style` prop would not suffice because some spinners use `@keyframes` rules that vary based on props.
+To allow for customization, the library uses [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) which are [supported](https://caniuse.com/#feat=css-variables) on all major browsers except IE 11.
 
 ## Examples
 
@@ -172,6 +172,10 @@ You will find further demos under `/examples` folder
 - [UMD via CDN](./examples/cdn)
 - [Create-React-App](./examples/cra)
 - [Server-Side Rendering](./examples/ssr)
+
+## Docs
+
+Read about the rationale for the [styling solution](./docs/styling.md) and [build toolchain](./docs/tooling.md).
 
 ## Copyright
 

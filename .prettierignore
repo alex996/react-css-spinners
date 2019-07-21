@@ -10,6 +10,6 @@ storybook-static
 
 *.html
 
-readme.md
+*.md
 
 tsconfig.json
