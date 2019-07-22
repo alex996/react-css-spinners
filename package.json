@@ -103,6 +103,7 @@
     "typescript": "^3.5.3"
   },
   "peerDependencies": {
+    "@babel/runtime": ">=7.5",
     "prop-types": ">=15",
     "react": ">=16.2"
   },
