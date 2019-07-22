@@ -6,11 +6,11 @@ import {
   addDecorator,
   configure
 } from '@storybook/react'
+import { withKnobs } from '@storybook/addon-knobs'
 
 addParameters({
   options: {
-    brandUrl: 'https://alex996.github.io/react-css-spinners/',
-    showPanel: false
+    brandUrl: 'https://alex996.github.io/react-css-spinners/'
   }
 })
 
@@ -30,6 +30,8 @@ const Decorator = (storyFn: RenderFunction): JSX.Element => (
 )
 
 addDecorator(Decorator)
+
+addDecorator(withKnobs)
 
 const req = require.context('../src', true, /\.story\.tsx$/)
 
