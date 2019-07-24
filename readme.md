@@ -127,9 +127,11 @@ module.exports = [
 
 There are a few other caveats, so it's best to check with a working [SSR example](./examples/ssr). An alternative to this would be to use [`isomorphic-style-loader`](https://github.com/kriasoft/isomorphic-style-loader). There is also [`babel-plugin-css-modules-transform`](https://github.com/michalkvasnicak/babel-plugin-css-modules-transform) that can strip away `require` statements on CSS files (you'd need to include `react-css-spinners` under `babel-loader`).
 
-### Rollup / Parcel
+### Rollup
 
 If you use Rollup, consider [`rollup-plugin-postcss`](https://github.com/egoist/,rollup-plugin-postcss). It exposes an `extract` option to extract your styles into a `.css` file. Alternatively, you could use [`rollup-plugin-scss`](https://github.com/thgh/rollup-plugin-scss) or [`rollup-plugin-css-only`](https://github.com/thgh/rollup-plugin-css-only) which would do the same thing.
+
+### Parcel
 
 Parcel comes with [built-in support](https://parceljs.org/css.html) for `.css` files and `@import`s, so this library should work out of the box.
 
