@@ -126,10 +126,5 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.css$": "<rootDir>/mocks/styleMock.js"
-    }
   }
 }
