@@ -4,7 +4,6 @@
 [![Build Status](https://travis-ci.org/alex996/react-css-spinners.svg?branch=master)](https://travis-ci.org/alex996/react-css-spinners)
 [![Coverage Status](https://coveralls.io/repos/github/alex996/react-css-spinners/badge.svg?branch=master)](https://coveralls.io/github/alex996/react-css-spinners?branch=master)
 [![minified-size](https://img.shields.io/bundlephobia/min/react-css-spinners@latest.svg)](https://bundlephobia.com/result?p=react-css-spinners@latest)
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![MIT License](https://img.shields.io/npm/l/react-css-spinners.svg)](https://github.com/alex996/react-css-spinners/blob/master/LICENSE)
 
 ![spinners](https://user-images.githubusercontent.com/15240969/61506027-cc63b180-a9ae-11e9-8569-9ee44ef3567c.gif)

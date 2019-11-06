@@ -1,14 +1,19 @@
 {
   "env": {
     "browser": true,
+    "node": true,
     "es6": true
   },
   "parser": "@typescript-eslint/parser",
   "extends": [
-    "standard",
+    "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:jest/recommended"
+    "plugin:jest/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint",
+    "prettier/react"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -27,10 +32,7 @@
     }
   },
   "rules": {
-    "@typescript-eslint/indent": "off",
-    "@typescript-eslint/member-delimiter-style": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "jsx-quotes": ["error", "prefer-single"]
+    "@typescript-eslint/explicit-function-return-type": "off"
   },
   "overrides": [
     {
