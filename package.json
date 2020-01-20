@@ -116,7 +116,7 @@
     }
   },
   "lint-staged": {
-    "*.js": [
+    "*.{js,ts,tsx}": [
       "npm run lint:fix",
       "npm run test:staged",
       "git add"
