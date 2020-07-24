@@ -26,6 +26,7 @@
         [
           "@babel/env",
           {
+            "targets": "node 10",
             "modules": false
           }
         ],
