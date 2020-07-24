@@ -22,6 +22,6 @@ it('sets CSS vars with props', (): void => {
   expect(style).toEqual({
     '--rcs-ellipsis-size': '100px',
     '--rcs-ellipsis-color': '#d36ac2',
-    margin: 20
+    margin: 20,
   })
 })

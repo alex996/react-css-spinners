@@ -19,7 +19,7 @@ const Circle = ({
   className,
   color = '#fff',
   size = 64,
-  style
+  style,
 }: Props): JSX.Element => (
   <div
     className={clsx('rcs-circle', className)}
@@ -27,7 +27,7 @@ const Circle = ({
       {
         '--rcs-circle-color': color,
         '--rcs-circle-size': `${size}px`,
-        ...style
+        ...style,
       } as Styles
     }
   >
@@ -50,7 +50,7 @@ Circle.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
   size: PropTypes.number,
-  style: PropTypes.object
+  style: PropTypes.object,
 }
 
 export default Circle

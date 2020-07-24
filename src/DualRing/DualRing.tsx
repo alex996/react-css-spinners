@@ -22,7 +22,7 @@ const DualRing = ({
   color = '#fff',
   size = 64,
   style,
-  thickness = 5
+  thickness = 5,
 }: Props): JSX.Element => (
   <div
     className={clsx('rcs-dual-ring', className)}
@@ -31,7 +31,7 @@ const DualRing = ({
         '--rcs-dual-ring-color': color,
         '--rcs-dual-ring-size': `${size}px`,
         '--rcs-dual-ring-thickness': `${thickness}px`,
-        ...style
+        ...style,
       } as Styles
     }
   />
@@ -42,7 +42,7 @@ DualRing.propTypes = {
   color: PropTypes.string,
   size: PropTypes.number,
   style: PropTypes.object,
-  thickness: PropTypes.number
+  thickness: PropTypes.number,
 }
 
 export default DualRing

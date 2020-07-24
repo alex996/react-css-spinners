@@ -19,7 +19,7 @@ const Ellipsis = ({
   className,
   color = '#fff',
   size = 64,
-  style
+  style,
 }: Props): JSX.Element => (
   <div
     className={clsx('rcs-ellipsis', className)}
@@ -27,7 +27,7 @@ const Ellipsis = ({
       {
         '--rcs-ellipsis-color': color,
         '--rcs-ellipsis-size': `${size}px`,
-        ...style
+        ...style,
       } as Styles
     }
   >
@@ -42,7 +42,7 @@ Ellipsis.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
   size: PropTypes.number,
-  style: PropTypes.object
+  style: PropTypes.object,
 }
 
 export default Ellipsis

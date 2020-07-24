@@ -19,7 +19,7 @@ const Roller = ({
   className,
   color = '#fff',
   size = 64,
-  style
+  style,
 }: Props): JSX.Element => (
   <div
     className={clsx('rcs-roller', className)}
@@ -27,7 +27,7 @@ const Roller = ({
       {
         '--rcs-roller-color': color,
         '--rcs-roller-size': `${size}px`,
-        ...style
+        ...style,
       } as Styles
     }
   >
@@ -46,7 +46,7 @@ Roller.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
   size: PropTypes.number,
-  style: PropTypes.object
+  style: PropTypes.object,
 }
 
 export default Roller

@@ -24,6 +24,6 @@ it('sets CSS vars with props', (): void => {
   expect(style).toEqual({
     '--rcs-hourglass-size': '100px',
     '--rcs-hourglass-color': '#d36ac2',
-    margin: 20
+    margin: 20,
   })
 })

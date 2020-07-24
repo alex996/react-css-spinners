@@ -19,7 +19,7 @@ const Grid = ({
   className,
   color = '#fff',
   size = 64,
-  style
+  style,
 }: Props): JSX.Element => (
   <div
     className={clsx('rcs-grid', className)}
@@ -27,7 +27,7 @@ const Grid = ({
       {
         '--rcs-grid-color': color,
         '--rcs-grid-size': `${size}px`,
-        ...style
+        ...style,
       } as Styles
     }
   >
@@ -47,7 +47,7 @@ Grid.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
   size: PropTypes.number,
-  style: PropTypes.object
+  style: PropTypes.object,
 }
 
 export default Grid

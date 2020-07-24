@@ -3,8 +3,8 @@ module.exports = ({ config }) => {
     test: /\.tsx?$/,
     exclude: /node_modules/,
     use: {
-      loader: 'babel-loader'
-    }
+      loader: 'babel-loader',
+    },
   })
 
   config.resolve.extensions.push('.ts', '.tsx')

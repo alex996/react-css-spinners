@@ -7,7 +7,7 @@ const sizeOptions = {
   range: true,
   min: 20,
   max: 200,
-  step: 1
+  step: 1,
 }
 
 storiesOf('Grid', module)

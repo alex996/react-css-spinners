@@ -8,7 +8,7 @@ module.exports = [
     devtool: 'source-map',
     entry: './src/client.js',
     output: {
-      path: `${__dirname}/dist/public`
+      path: `${__dirname}/dist/public`,
     },
     module: {
       rules: [
@@ -17,18 +17,18 @@ module.exports = [
         // See webpack-contrib/mini-css-extract-plugin#90
         {
           test: /\.css$/,
-          use: [MiniCssExtractPlugin.loader, 'css-loader']
+          use: [MiniCssExtractPlugin.loader, 'css-loader'],
         },
         {
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
-            loader: 'babel-loader'
-          }
-        }
-      ]
+            loader: 'babel-loader',
+          },
+        },
+      ],
     },
-    plugins: [new MiniCssExtractPlugin()]
+    plugins: [new MiniCssExtractPlugin()],
   },
   {
     target: 'node',
@@ -39,14 +39,14 @@ module.exports = [
         // Bundle RCS so that css-loader detects its CSS and strips
         // require('./style.css') statements. Otherwise, the build
         // will fail with SyntaxError: Unexpected token . at runtime.
-        whitelist: /react-css-spinners\/*$/
-      })
+        whitelist: /react-css-spinners\/*$/,
+      }),
     ],
     node: {
       // By default, webpack uses the real dirname (src) relative to the context
       // option. If you set it to false, it will use the absolute path to /dist.
       // This is required for express.static to resolve /public properly.
-      __dirname: false
+      __dirname: false,
     },
     plugins: [new NodemonPlugin()],
     module: {
@@ -55,17 +55,17 @@ module.exports = [
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
-            loader: 'babel-loader'
-          }
+            loader: 'babel-loader',
+          },
         },
         {
           test: /\.css$/,
           loader: 'css-loader',
           options: {
-            onlyLocals: true // CSS is read, but not bundled
-          }
-        }
-      ]
-    }
-  }
+            onlyLocals: true, // CSS is read, but not bundled
+          },
+        },
+      ],
+    },
+  },
 ]

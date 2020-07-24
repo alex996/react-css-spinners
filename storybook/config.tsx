@@ -4,14 +4,14 @@ import {
   addParameters,
   RenderFunction,
   addDecorator,
-  configure
+  configure,
 } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
 
 addParameters({
   options: {
-    brandUrl: 'https://alex996.github.io/react-css-spinners/'
-  }
+    brandUrl: 'https://alex996.github.io/react-css-spinners/',
+  },
 })
 
 const Container = styled('div')`

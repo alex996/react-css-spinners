@@ -22,7 +22,7 @@ const Ring = ({
   color = '#fff',
   size = 64,
   style,
-  thickness = 5
+  thickness = 5,
 }: Props): JSX.Element => (
   <div
     className={clsx('rcs-ring', className)}
@@ -31,7 +31,7 @@ const Ring = ({
         '--rcs-ring-color': color,
         '--rcs-ring-size': `${size}px`,
         '--rcs-ring-thickness': `${thickness}px`,
-        ...style
+        ...style,
       } as Styles
     }
   >
@@ -47,7 +47,7 @@ Ring.propTypes = {
   color: PropTypes.string,
   size: PropTypes.number,
   style: PropTypes.object,
-  thickness: PropTypes.number
+  thickness: PropTypes.number,
 }
 
 export default Ring

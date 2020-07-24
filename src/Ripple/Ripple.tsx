@@ -22,7 +22,7 @@ const Ripple = ({
   color = '#fff',
   size = 64,
   style,
-  thickness = 4
+  thickness = 4,
 }: Props): JSX.Element => (
   <div
     className={clsx('rcs-ripple', className)}
@@ -31,7 +31,7 @@ const Ripple = ({
         '--rcs-ripple-color': color,
         '--rcs-ripple-size': `${size}px`,
         '--rcs-ripple-thickness': `${thickness}px`,
-        ...style
+        ...style,
       } as Styles
     }
   >
@@ -45,7 +45,7 @@ Ripple.propTypes = {
   color: PropTypes.string,
   size: PropTypes.number,
   style: PropTypes.object,
-  thickness: PropTypes.number
+  thickness: PropTypes.number,
 }
 
 export default Ripple

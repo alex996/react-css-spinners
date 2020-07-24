@@ -23,6 +23,6 @@ it('sets CSS vars with props', (): void => {
     '--rcs-ripple-size': '100px',
     '--rcs-ripple-color': '#d36ac2',
     '--rcs-ripple-thickness': '6px',
-    margin: 20
+    margin: 20,
   })
 })

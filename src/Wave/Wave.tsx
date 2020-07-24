@@ -22,7 +22,7 @@ const Wave = ({
   color = '#fff',
   size = 64,
   style,
-  thickness = 12
+  thickness = 12,
 }: Props): JSX.Element => (
   <div
     className={clsx('rcs-wave', className)}
@@ -31,7 +31,7 @@ const Wave = ({
         '--rcs-wave-color': color,
         '--rcs-wave-size': `${size}px`,
         '--rcs-wave-thickness': `${thickness}px`,
-        ...style
+        ...style,
       } as Styles
     }
   >
@@ -46,7 +46,7 @@ Wave.propTypes = {
   color: PropTypes.string,
   size: PropTypes.number,
   style: PropTypes.object,
-  thickness: PropTypes.number
+  thickness: PropTypes.number,
 }
 
 export default Wave

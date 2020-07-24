@@ -22,6 +22,6 @@ it('sets CSS vars with props', (): void => {
   expect(style).toEqual({
     '--rcs-circle-size': '100px',
     '--rcs-circle-color': '#d36ac2',
-    margin: 20
+    margin: 20,
   })
 })

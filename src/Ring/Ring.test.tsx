@@ -23,6 +23,6 @@ it('sets CSS vars with props', (): void => {
     '--rcs-ring-size': '100px',
     '--rcs-ring-color': '#d36ac2',
     '--rcs-ring-thickness': '7px',
-    margin: 20
+    margin: 20,
   })
 })

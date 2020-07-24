@@ -25,6 +25,6 @@ it('sets CSS vars with props', (): void => {
     '--rcs-dual-ring-size': '100px',
     '--rcs-dual-ring-color': '#d36ac2',
     '--rcs-dual-ring-thickness': '7px',
-    margin: 20
+    margin: 20,
   })
 })

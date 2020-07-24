@@ -23,6 +23,6 @@ it('sets CSS vars with props', (): void => {
     '--rcs-wave-size': '100px',
     '--rcs-wave-color': '#d36ac2',
     '--rcs-wave-thickness': '15px',
-    margin: 20
+    margin: 20,
   })
 })
