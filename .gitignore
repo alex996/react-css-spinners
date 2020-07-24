@@ -5,3 +5,5 @@ dist
 node_modules
 
 storybook-static
+
+todo.md
