@@ -39,7 +39,7 @@ module.exports = [
         // Bundle RCS so that css-loader detects its CSS and strips
         // require('./style.css') statements. Otherwise, the build
         // will fail with SyntaxError: Unexpected token . at runtime.
-        whitelist: /react-css-spinners\/*$/,
+        allowlist: /react-css-spinners\/*$/,
       }),
     ],
     node: {
