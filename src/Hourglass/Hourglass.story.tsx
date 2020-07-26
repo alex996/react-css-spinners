@@ -1,5 +1,4 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
+import React, { FC } from 'react'
 import { number, color } from '@storybook/addon-knobs'
 import { Hourglass } from './'
 
@@ -10,14 +9,16 @@ const sizeOptions = {
   step: 1,
 }
 
-storiesOf('Hourglass', module)
-  .add('default', (): JSX.Element => <Hourglass />)
-  .add(
-    'custom',
-    (): JSX.Element => (
-      <Hourglass
-        size={number('Size', 100, sizeOptions)}
-        color={color('Color', '#d36ac2')}
-      />
-    )
-  )
+export default {
+  component: Hourglass,
+  title: 'Hourglass',
+}
+
+export const basic: FC = () => <Hourglass />
+
+export const custom: FC = () => (
+  <Hourglass
+    size={number('Size', 100, sizeOptions)}
+    color={color('Color', '#d36ac2')}
+  />
+)

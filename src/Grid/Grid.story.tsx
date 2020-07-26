@@ -1,5 +1,4 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
+import React, { FC } from 'react'
 import { number, color } from '@storybook/addon-knobs'
 import { Grid } from './'
 
@@ -10,14 +9,16 @@ const sizeOptions = {
   step: 1,
 }
 
-storiesOf('Grid', module)
-  .add('default', (): JSX.Element => <Grid />)
-  .add(
-    'custom',
-    (): JSX.Element => (
-      <Grid
-        size={number('Size', 100, sizeOptions)}
-        color={color('Color', '#d36ac2')}
-      />
-    )
-  )
+export default {
+  component: Grid,
+  title: 'Grid',
+}
+
+export const basic: FC = () => <Grid />
+
+export const custom: FC = () => (
+  <Grid
+    size={number('Size', 100, sizeOptions)}
+    color={color('Color', '#d36ac2')}
+  />
+)

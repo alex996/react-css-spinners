@@ -1,5 +1,4 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
+import React, { FC } from 'react'
 import { number, color } from '@storybook/addon-knobs'
 import { Circle } from './'
 
@@ -10,14 +9,16 @@ const sizeOptions = {
   step: 1,
 }
 
-storiesOf('Circle', module)
-  .add('default', (): JSX.Element => <Circle />)
-  .add(
-    'custom',
-    (): JSX.Element => (
-      <Circle
-        size={number('Size', 100, sizeOptions)}
-        color={color('Color', '#d36ac2')}
-      />
-    )
-  )
+export default {
+  component: Circle,
+  title: 'Circle',
+}
+
+export const basic: FC = () => <Circle />
+
+export const custom: FC = () => (
+  <Circle
+    size={number('Size', 100, sizeOptions)}
+    color={color('Color', '#d36ac2')}
+  />
+)

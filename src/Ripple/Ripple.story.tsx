@@ -1,5 +1,4 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
+import React, { FC } from 'react'
 import { number, color } from '@storybook/addon-knobs'
 import { Ripple } from './'
 
@@ -17,15 +16,17 @@ const thicknessOptions = {
   step: 1,
 }
 
-storiesOf('Ripple', module)
-  .add('default', (): JSX.Element => <Ripple />)
-  .add(
-    'custom',
-    (): JSX.Element => (
-      <Ripple
-        size={number('Size', 100, sizeOptions)}
-        color={color('Color', '#d36ac2')}
-        thickness={number('Thickness', 7, thicknessOptions)}
-      />
-    )
-  )
+export default {
+  component: Ripple,
+  title: 'Ripple',
+}
+
+export const basic: FC = () => <Ripple />
+
+export const custom: FC = () => (
+  <Ripple
+    size={number('Size', 100, sizeOptions)}
+    color={color('Color', '#d36ac2')}
+    thickness={number('Thickness', 7, thicknessOptions)}
+  />
+)

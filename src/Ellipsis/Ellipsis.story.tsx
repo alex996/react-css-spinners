@@ -1,5 +1,4 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
+import React, { FC } from 'react'
 import { number, color } from '@storybook/addon-knobs'
 import { Ellipsis } from './'
 
@@ -10,14 +9,16 @@ const sizeOptions = {
   step: 1,
 }
 
-storiesOf('Ellipsis', module)
-  .add('default', (): JSX.Element => <Ellipsis />)
-  .add(
-    'custom',
-    (): JSX.Element => (
-      <Ellipsis
-        size={number('Size', 100, sizeOptions)}
-        color={color('Color', '#d36ac2')}
-      />
-    )
-  )
+export default {
+  component: Ellipsis,
+  title: 'Ellipsis',
+}
+
+export const basic: FC = () => <Ellipsis />
+
+export const custom: FC = () => (
+  <Ellipsis
+    size={number('Size', 100, sizeOptions)}
+    color={color('Color', '#d36ac2')}
+  />
+)

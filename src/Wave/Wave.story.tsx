@@ -1,5 +1,4 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
+import React, { FC } from 'react'
 import { number, color } from '@storybook/addon-knobs'
 import { Wave } from './'
 
@@ -17,15 +16,17 @@ const thicknessOptions = {
   step: 1,
 }
 
-storiesOf('Wave', module)
-  .add('default', (): JSX.Element => <Wave />)
-  .add(
-    'custom',
-    (): JSX.Element => (
-      <Wave
-        size={number('Size', 100, sizeOptions)}
-        color={color('Color', '#d36ac2')}
-        thickness={number('Thickness', 15, thicknessOptions)}
-      />
-    )
-  )
+export default {
+  component: Wave,
+  title: 'Wave',
+}
+
+export const basic: FC = () => <Wave />
+
+export const custom: FC = () => (
+  <Wave
+    size={number('Size', 100, sizeOptions)}
+    color={color('Color', '#d36ac2')}
+    thickness={number('Thickness', 15, thicknessOptions)}
+  />
+)

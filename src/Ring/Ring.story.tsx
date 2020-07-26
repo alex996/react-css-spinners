@@ -1,5 +1,4 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
+import React, { FC } from 'react'
 import { number, color } from '@storybook/addon-knobs'
 import { Ring } from './'
 
@@ -17,15 +16,17 @@ const thicknessOptions = {
   step: 1,
 }
 
-storiesOf('Ring', module)
-  .add('default', (): JSX.Element => <Ring />)
-  .add(
-    'custom',
-    (): JSX.Element => (
-      <Ring
-        size={number('Size', 100, sizeOptions)}
-        color={color('Color', '#d36ac2')}
-        thickness={number('Thickness', 7, thicknessOptions)}
-      />
-    )
-  )
+export default {
+  component: Ring,
+  title: 'Ring',
+}
+
+export const basic: FC = () => <Ring />
+
+export const custom: FC = () => (
+  <Ring
+    size={number('Size', 100, sizeOptions)}
+    color={color('Color', '#d36ac2')}
+    thickness={number('Thickness', 7, thicknessOptions)}
+  />
+)

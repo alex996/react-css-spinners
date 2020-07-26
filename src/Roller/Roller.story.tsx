@@ -1,5 +1,4 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
+import React, { FC } from 'react'
 import { number, color } from '@storybook/addon-knobs'
 import { Roller } from './'
 
@@ -10,14 +9,16 @@ const sizeOptions = {
   step: 1,
 }
 
-storiesOf('Roller', module)
-  .add('default', (): JSX.Element => <Roller />)
-  .add(
-    'custom',
-    (): JSX.Element => (
-      <Roller
-        size={number('Size', 100, sizeOptions)}
-        color={color('Color', '#d36ac2')}
-      />
-    )
-  )
+export default {
+  component: Roller,
+  title: 'Roller',
+}
+
+export const basic: FC = () => <Roller />
+
+export const custom: FC = () => (
+  <Roller
+    size={number('Size', 100, sizeOptions)}
+    color={color('Color', '#d36ac2')}
+  />
+)

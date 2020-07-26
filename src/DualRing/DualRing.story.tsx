@@ -1,5 +1,4 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
+import React, { FC } from 'react'
 import { number, color } from '@storybook/addon-knobs'
 import { DualRing } from './'
 
@@ -17,15 +16,17 @@ const thicknessOptions = {
   step: 1,
 }
 
-storiesOf('DualRing', module)
-  .add('default', (): JSX.Element => <DualRing />)
-  .add(
-    'custom',
-    (): JSX.Element => (
-      <DualRing
-        size={number('Size', 100, sizeOptions)}
-        color={color('Color', '#d36ac2')}
-        thickness={number('Thickness', 7, thicknessOptions)}
-      />
-    )
-  )
+export default {
+  component: DualRing,
+  title: 'DualRing',
+}
+
+export const basic: FC = () => <DualRing />
+
+export const custom: FC = () => (
+  <DualRing
+    size={number('Size', 100, sizeOptions)}
+    color={color('Color', '#d36ac2')}
+    thickness={number('Thickness', 7, thicknessOptions)}
+  />
+)
