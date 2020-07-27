@@ -1,5 +1,5 @@
 import './wave.css'
-import React, { CSSProperties } from 'react'
+import React, { FC, CSSProperties } from 'react'
 import PropTypes from 'prop-types'
 import { clsx } from '../utils'
 
@@ -12,34 +12,25 @@ interface Props {
 }
 
 interface Styles extends CSSProperties {
-  '--rcs-wave-color': string
-  '--rcs-wave-size': string
-  '--rcs-wave-thickness': string
+  '--rcs-wave-color'?: string
+  '--rcs-wave-size'?: string
+  '--rcs-wave-thickness'?: string
 }
 
-const Wave = ({
-  className,
-  color = '#fff',
-  size = 64,
-  style,
-  thickness = 12,
-}: Props): JSX.Element => (
-  <div
-    className={clsx('rcs-wave', className)}
-    style={
-      {
-        '--rcs-wave-color': color,
-        '--rcs-wave-size': `${size}px`,
-        '--rcs-wave-thickness': `${thickness}px`,
-        ...style,
-      } as Styles
-    }
-  >
-    <div />
-    <div />
-    <div />
-  </div>
-)
+const Wave: FC<Props> = ({ className, color, size, style, thickness }) => {
+  const varStyle: Styles = { ...style }
+  color && (varStyle['--rcs-wave-color'] = color)
+  size && (varStyle['--rcs-wave-size'] = `${size}px`)
+  thickness && (varStyle['--rcs-wave-thickness'] = `${thickness}px`)
+
+  return (
+    <div className={clsx('rcs-wave', className)} style={varStyle}>
+      <div />
+      <div />
+      <div />
+    </div>
+  )
+}
 
 Wave.propTypes = {
   className: PropTypes.string,

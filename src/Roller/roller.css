@@ -1,5 +1,9 @@
+:root {
+  --rcs-roller-color: #fff;
+  --rcs-roller-size: 64px;
+}
+
 .rcs-roller {
-  --rcs-roller-ratio: calc(var(--rcs-roller-size) / 64);
   display: inline-block;
   position: relative;
   width: var(--rcs-roller-size);
@@ -8,20 +12,20 @@
 
 .rcs-roller div {
   animation: rcs-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  transform-origin: calc(32 * var(--rcs-roller-ratio))
-    calc(32 * var(--rcs-roller-ratio));
+  transform-origin: calc(var(--rcs-roller-size) / 2)
+    calc(var(--rcs-roller-size) / 2);
 }
 
 .rcs-roller div:after {
-  content: " ";
+  content: ' ';
   display: block;
   position: absolute;
-  width: calc(6 * var(--rcs-roller-ratio));
-  height: calc(6 * var(--rcs-roller-ratio));
+  width: calc(var(--rcs-roller-size) / 11.42857);
+  height: calc(var(--rcs-roller-size) / 11.42857);
   border-radius: 50%;
   background: var(--rcs-roller-color);
-  margin: calc(-3 * var(--rcs-roller-ratio)) 0 0
-    calc(-3 * var(--rcs-roller-ratio));
+  margin: calc(var(--rcs-roller-size) / -20) 0 0
+    calc(var(--rcs-roller-size) / -20);
 }
 
 .rcs-roller div:nth-child(1) {
@@ -29,8 +33,8 @@
 }
 
 .rcs-roller div:nth-child(1):after {
-  top: calc(50 * var(--rcs-roller-ratio));
-  left: calc(50 * var(--rcs-roller-ratio));
+  top: calc(var(--rcs-roller-size) / 1.26984);
+  left: calc(var(--rcs-roller-size) / 1.26984);
 }
 
 .rcs-roller div:nth-child(2) {
@@ -38,8 +42,8 @@
 }
 
 .rcs-roller div:nth-child(2):after {
-  top: calc(54 * var(--rcs-roller-ratio));
-  left: calc(45 * var(--rcs-roller-ratio));
+  top: calc(var(--rcs-roller-size) / 1.17647);
+  left: calc(var(--rcs-roller-size) / 1.42857);
 }
 
 .rcs-roller div:nth-child(3) {
@@ -47,8 +51,8 @@
 }
 
 .rcs-roller div:nth-child(3):after {
-  top: calc(57 * var(--rcs-roller-ratio));
-  left: calc(39 * var(--rcs-roller-ratio));
+  top: calc(var(--rcs-roller-size) / 1.12676);
+  left: calc(var(--rcs-roller-size) / 1.66666);
 }
 
 .rcs-roller div:nth-child(4) {
@@ -56,8 +60,8 @@
 }
 
 .rcs-roller div:nth-child(4):after {
-  top: calc(58 * var(--rcs-roller-ratio));
-  left: calc(32 * var(--rcs-roller-ratio));
+  top: calc(var(--rcs-roller-size) / 1.11111);
+  left: calc(var(--rcs-roller-size) / 2);
 }
 
 .rcs-roller div:nth-child(5) {
@@ -65,16 +69,17 @@
 }
 
 .rcs-roller div:nth-child(5):after {
-  top: calc(57 * var(--rcs-roller-ratio));
-  left: calc(25 * var(--rcs-roller-ratio));
+  top: calc(var(--rcs-roller-size) / 1.12676);
+  left: calc(var(--rcs-roller-size) / 2.5);
 }
+
 .rcs-roller div:nth-child(6) {
   animation-delay: -0.216s;
 }
 
 .rcs-roller div:nth-child(6):after {
-  top: calc(54 * var(--rcs-roller-ratio));
-  left: calc(19 * var(--rcs-roller-ratio));
+  top: calc(var(--rcs-roller-size) / 1.17647);
+  left: calc(var(--rcs-roller-size) / 3.33333);
 }
 
 .rcs-roller div:nth-child(7) {
@@ -82,8 +87,8 @@
 }
 
 .rcs-roller div:nth-child(7):after {
-  top: calc(50 * var(--rcs-roller-ratio));
-  left: calc(14 * var(--rcs-roller-ratio));
+  top: calc(var(--rcs-roller-size) / 1.26984);
+  left: calc(var(--rcs-roller-size) / 4.70588);
 }
 
 .rcs-roller div:nth-child(8) {
@@ -91,8 +96,8 @@
 }
 
 .rcs-roller div:nth-child(8):after {
-  top: calc(45 * var(--rcs-roller-ratio));
-  left: calc(10 * var(--rcs-roller-ratio));
+  top: calc(var(--rcs-roller-size) / 1.42857);
+  left: calc(var(--rcs-roller-size) / 6.66666);
 }
 
 @keyframes rcs-roller {

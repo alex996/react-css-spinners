@@ -1,5 +1,5 @@
 import './ring.css'
-import React, { CSSProperties } from 'react'
+import React, { FC, CSSProperties } from 'react'
 import PropTypes from 'prop-types'
 import { clsx } from '../utils'
 
@@ -12,35 +12,26 @@ interface Props {
 }
 
 interface Styles extends CSSProperties {
-  '--rcs-ring-color': string
-  '--rcs-ring-size': string
-  '--rcs-ring-thickness': string
+  '--rcs-ring-color'?: string
+  '--rcs-ring-size'?: string
+  '--rcs-ring-thickness'?: string
 }
 
-const Ring = ({
-  className,
-  color = '#fff',
-  size = 64,
-  style,
-  thickness = 5,
-}: Props): JSX.Element => (
-  <div
-    className={clsx('rcs-ring', className)}
-    style={
-      {
-        '--rcs-ring-color': color,
-        '--rcs-ring-size': `${size}px`,
-        '--rcs-ring-thickness': `${thickness}px`,
-        ...style,
-      } as Styles
-    }
-  >
-    <div />
-    <div />
-    <div />
-    <div />
-  </div>
-)
+const Ring: FC<Props> = ({ className, color, size, style, thickness }) => {
+  const varStyle: Styles = { ...style }
+  color && (varStyle['--rcs-ring-color'] = color)
+  size && (varStyle['--rcs-ring-size'] = `${size}px`)
+  thickness && (varStyle['--rcs-ring-thickness'] = `${thickness}px`)
+
+  return (
+    <div className={clsx('rcs-ring', className)} style={varStyle}>
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+  )
+}
 
 Ring.propTypes = {
   className: PropTypes.string,

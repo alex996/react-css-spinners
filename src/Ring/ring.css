@@ -1,5 +1,10 @@
+:root {
+  --rcs-ring-color: #fff;
+  --rcs-ring-size: 64px;
+  --rcs-ring-thickness: 6px;
+}
+
 .rcs-ring {
-  --rcs-ring-ratio: calc(var(--rcs-ring-size) / 64);
   display: inline-block;
   position: relative;
   width: var(--rcs-ring-size);
@@ -10,9 +15,8 @@
   box-sizing: border-box;
   display: block;
   position: absolute;
-  width: calc(51 * var(--rcs-ring-ratio));
-  height: calc(51 * var(--rcs-ring-ratio));
-  margin: calc(6 * var(--rcs-ring-ratio));
+  width: 100%;
+  height: 100%;
   border: var(--rcs-ring-thickness) solid var(--rcs-ring-color);
   border-radius: 50%;
   animation: rcs-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;

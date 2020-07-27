@@ -1,5 +1,9 @@
+:root {
+  --rcs-hourglass-color: #fff;
+  --rcs-hourglass-size: 64px;
+}
+
 .rcs-hourglass {
-  --rcs-hourglass-ratio: calc(var(--rcs-hourglass-size) / 64);
   display: inline-block;
   position: relative;
   width: var(--rcs-hourglass-size);
@@ -7,14 +11,13 @@
 }
 
 .rcs-hourglass:after {
-  content: " ";
+  content: ' ';
   display: block;
   border-radius: 50%;
   width: 0;
   height: 0;
-  margin: calc(6 * var(--rcs-hourglass-ratio));
   box-sizing: border-box;
-  border: calc(26 * var(--rcs-hourglass-ratio)) solid var(--rcs-hourglass-color);
+  border: calc(var(--rcs-hourglass-size) / 2) solid var(--rcs-hourglass-color);
   border-color: var(--rcs-hourglass-color) transparent;
   animation: rcs-hourglass 1.2s infinite;
 }

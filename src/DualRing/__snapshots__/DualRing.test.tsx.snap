@@ -3,12 +3,6 @@
 exports[`renders correctly 1`] = `
 <div
   className="rcs-dual-ring"
-  style={
-    Object {
-      "--rcs-dual-ring-color": "#fff",
-      "--rcs-dual-ring-size": "64px",
-      "--rcs-dual-ring-thickness": "5px",
-    }
-  }
+  style={Object {}}
 />
 `;

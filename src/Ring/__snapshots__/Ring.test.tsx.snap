@@ -3,13 +3,7 @@
 exports[`renders correctly 1`] = `
 <div
   className="rcs-ring"
-  style={
-    Object {
-      "--rcs-ring-color": "#fff",
-      "--rcs-ring-size": "64px",
-      "--rcs-ring-thickness": "5px",
-    }
-  }
+  style={Object {}}
 >
   <div />
   <div />

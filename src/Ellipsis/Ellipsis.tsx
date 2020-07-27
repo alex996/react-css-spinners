@@ -1,5 +1,5 @@
 import './ellipsis.css'
-import React, { CSSProperties } from 'react'
+import React, { FC, CSSProperties } from 'react'
 import PropTypes from 'prop-types'
 import { clsx } from '../utils'
 
@@ -11,32 +11,24 @@ interface Props {
 }
 
 interface Styles extends CSSProperties {
-  '--rcs-ellipsis-color': string
-  '--rcs-ellipsis-size': string
+  '--rcs-ellipsis-color'?: string
+  '--rcs-ellipsis-size'?: string
 }
 
-const Ellipsis = ({
-  className,
-  color = '#fff',
-  size = 64,
-  style,
-}: Props): JSX.Element => (
-  <div
-    className={clsx('rcs-ellipsis', className)}
-    style={
-      {
-        '--rcs-ellipsis-color': color,
-        '--rcs-ellipsis-size': `${size}px`,
-        ...style,
-      } as Styles
-    }
-  >
-    <div />
-    <div />
-    <div />
-    <div />
-  </div>
-)
+const Ellipsis: FC<Props> = ({ className, color, size, style }) => {
+  const varStyle: Styles = { ...style }
+  color && (varStyle['--rcs-ellipsis-color'] = color)
+  size && (varStyle['--rcs-ellipsis-size'] = `${size}px`)
+
+  return (
+    <div className={clsx('rcs-ellipsis', className)} style={varStyle}>
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+  )
+}
 
 Ellipsis.propTypes = {
   className: PropTypes.string,

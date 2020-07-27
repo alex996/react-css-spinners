@@ -1,5 +1,9 @@
+:root {
+  --rcs-grid-color: #fff;
+  --rcs-grid-size: 64px;
+}
+
 .rcs-grid {
-  --rcs-grid-ratio: calc(var(--rcs-grid-size) / 64);
   display: inline-block;
   position: relative;
   width: var(--rcs-grid-size);
@@ -8,64 +12,64 @@
 
 .rcs-grid div {
   position: absolute;
-  width: calc(13 * var(--rcs-grid-ratio));
-  height: calc(13 * var(--rcs-grid-ratio));
+  width: calc(var(--rcs-grid-size) / 5);
+  height: calc(var(--rcs-grid-size) / 5);
   border-radius: 50%;
   background: var(--rcs-grid-color);
   animation: rcs-grid 1.2s linear infinite;
 }
 
 .rcs-grid div:nth-child(1) {
-  top: calc(6 * var(--rcs-grid-ratio));
-  left: calc(6 * var(--rcs-grid-ratio));
+  top: calc(var(--rcs-grid-size) / 10);
+  left: calc(var(--rcs-grid-size) / 10);
   animation-delay: 0s;
 }
 
 .rcs-grid div:nth-child(2) {
-  top: calc(6 * var(--rcs-grid-ratio));
-  left: calc(26 * var(--rcs-grid-ratio));
+  top: calc(var(--rcs-grid-size) / 10);
+  left: calc(var(--rcs-grid-size) / 2.5);
   animation-delay: -0.4s;
 }
 
 .rcs-grid div:nth-child(3) {
-  top: calc(6 * var(--rcs-grid-ratio));
-  left: calc(45 * var(--rcs-grid-ratio));
+  top: calc(var(--rcs-grid-size) / 10);
+  left: calc(var(--rcs-grid-size) / 1.42857);
   animation-delay: -0.8s;
 }
 
 .rcs-grid div:nth-child(4) {
-  top: calc(26 * var(--rcs-grid-ratio));
-  left: calc(6 * var(--rcs-grid-ratio));
+  top: calc(var(--rcs-grid-size) / 2.5);
+  left: calc(var(--rcs-grid-size) / 10);
   animation-delay: -0.4s;
 }
 
 .rcs-grid div:nth-child(5) {
-  top: calc(26 * var(--rcs-grid-ratio));
-  left: calc(26 * var(--rcs-grid-ratio));
+  top: calc(var(--rcs-grid-size) / 2.5);
+  left: calc(var(--rcs-grid-size) / 2.5);
   animation-delay: -0.8s;
 }
 
 .rcs-grid div:nth-child(6) {
-  top: calc(26 * var(--rcs-grid-ratio));
-  left: calc(45 * var(--rcs-grid-ratio));
+  top: calc(var(--rcs-grid-size) / 2.5);
+  left: calc(var(--rcs-grid-size) / 1.42857);
   animation-delay: -1.2s;
 }
 
 .rcs-grid div:nth-child(7) {
-  top: calc(45 * var(--rcs-grid-ratio));
-  left: calc(6 * var(--rcs-grid-ratio));
+  top: calc(var(--rcs-grid-size) / 1.42857);
+  left: calc(var(--rcs-grid-size) / 10);
   animation-delay: -0.8s;
 }
 
 .rcs-grid div:nth-child(8) {
-  top: calc(45 * var(--rcs-grid-ratio));
-  left: calc(26 * var(--rcs-grid-ratio));
+  top: calc(var(--rcs-grid-size) / 1.42857);
+  left: calc(var(--rcs-grid-size) / 2.5);
   animation-delay: -1.2s;
 }
 
 .rcs-grid div:nth-child(9) {
-  top: calc(45 * var(--rcs-grid-ratio));
-  left: calc(45 * var(--rcs-grid-ratio));
+  top: calc(var(--rcs-grid-size) / 1.42857);
+  left: calc(var(--rcs-grid-size) / 1.42857);
   animation-delay: -1.6s;
 }
 

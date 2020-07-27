@@ -33,19 +33,26 @@ or `yarn` - whichever you prefer
 yarn add react-css-spinners
 ```
 
-Import any spinner you like
+Import any spinner and customize it to your liking
 
-```js
+```jsx
 import { Ellipsis } from 'react-css-spinners'
-```
 
-and then it's business as usual
-
-```js
 const Loader = props => (
-  <Ellipsis />
+  <>
+    {/* Use defaults (color #fff, size 64px) */}
+    <Ellipsis />
+
+    {/* Pass props like color and size (more in demo) */}
+    <Ellipsis color="#ffdf00" size={40} />
+
+    {/* Pass a CSS class to get full control over styling */}
+    <Ellipsis className="my-ellipsis" />
+  </>
 )
 ```
+
+Complete info about props can be found in the [demo](https://alex996.github.io/react-css-spinners).
 
 ## Prerequisites
 

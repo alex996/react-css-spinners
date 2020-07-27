@@ -1,5 +1,5 @@
 import './ripple.css'
-import React, { CSSProperties } from 'react'
+import React, { FC, CSSProperties } from 'react'
 import PropTypes from 'prop-types'
 import { clsx } from '../utils'
 
@@ -12,33 +12,24 @@ interface Props {
 }
 
 interface Styles extends CSSProperties {
-  '--rcs-ripple-color': string
-  '--rcs-ripple-size': string
-  '--rcs-ripple-thickness': string
+  '--rcs-ripple-color'?: string
+  '--rcs-ripple-size'?: string
+  '--rcs-ripple-thickness'?: string
 }
 
-const Ripple = ({
-  className,
-  color = '#fff',
-  size = 64,
-  style,
-  thickness = 4,
-}: Props): JSX.Element => (
-  <div
-    className={clsx('rcs-ripple', className)}
-    style={
-      {
-        '--rcs-ripple-color': color,
-        '--rcs-ripple-size': `${size}px`,
-        '--rcs-ripple-thickness': `${thickness}px`,
-        ...style,
-      } as Styles
-    }
-  >
-    <div />
-    <div />
-  </div>
-)
+const Ripple: FC<Props> = ({ className, color, size, style, thickness }) => {
+  const varStyle: Styles = { ...style }
+  color && (varStyle['--rcs-ripple-color'] = color)
+  size && (varStyle['--rcs-ripple-size'] = `${size}px`)
+  thickness && (varStyle['--rcs-ripple-thickness'] = `${thickness}px`)
+
+  return (
+    <div className={clsx('rcs-ripple', className)} style={varStyle}>
+      <div />
+      <div />
+    </div>
+  )
+}
 
 Ripple.propTypes = {
   className: PropTypes.string,

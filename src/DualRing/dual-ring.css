@@ -1,16 +1,18 @@
+:root {
+  --rcs-dual-ring-color: #fff;
+  --rcs-dual-ring-size: 64px;
+  --rcs-dual-ring-thickness: 5px;
+}
+
 .rcs-dual-ring {
-  --rcs-dual-ring-ratio: calc(var(--rcs-dual-ring-size) / 64);
   display: inline-block;
-  width: var(--rcs-dual-ring-size);
-  height: var(--rcs-dual-ring-size);
 }
 
 .rcs-dual-ring:after {
-  content: " ";
+  content: ' ';
   display: block;
-  width: calc(46 * var(--rcs-dual-ring-ratio));
-  height: calc(46 * var(--rcs-dual-ring-ratio));
-  margin: 4px;
+  width: calc(var(--rcs-dual-ring-size) - 2 * var(--rcs-dual-ring-thickness));
+  height: calc(var(--rcs-dual-ring-size) - 2 * var(--rcs-dual-ring-thickness));
   border-radius: 50%;
   border: var(--rcs-dual-ring-thickness) solid var(--rcs-dual-ring-color);
   border-color: var(--rcs-dual-ring-color) transparent;

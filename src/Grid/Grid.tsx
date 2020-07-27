@@ -1,5 +1,5 @@
 import './grid.css'
-import React, { CSSProperties } from 'react'
+import React, { FC, CSSProperties } from 'react'
 import PropTypes from 'prop-types'
 import { clsx } from '../utils'
 
@@ -11,37 +11,29 @@ interface Props {
 }
 
 interface Styles extends CSSProperties {
-  '--rcs-grid-color': string
-  '--rcs-grid-size': string
+  '--rcs-grid-color'?: string
+  '--rcs-grid-size'?: string
 }
 
-const Grid = ({
-  className,
-  color = '#fff',
-  size = 64,
-  style,
-}: Props): JSX.Element => (
-  <div
-    className={clsx('rcs-grid', className)}
-    style={
-      {
-        '--rcs-grid-color': color,
-        '--rcs-grid-size': `${size}px`,
-        ...style,
-      } as Styles
-    }
-  >
-    <div />
-    <div />
-    <div />
-    <div />
-    <div />
-    <div />
-    <div />
-    <div />
-    <div />
-  </div>
-)
+const Grid: FC<Props> = ({ className, color, size, style }) => {
+  const varStyle: Styles = { ...style }
+  color && (varStyle['--rcs-grid-color'] = color)
+  size && (varStyle['--rcs-grid-size'] = `${size}px`)
+
+  return (
+    <div className={clsx('rcs-grid', className)} style={varStyle}>
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+  )
+}
 
 Grid.propTypes = {
   className: PropTypes.string,

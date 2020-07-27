@@ -1,5 +1,10 @@
+:root {
+  --rcs-wave-color: #fff;
+  --rcs-wave-size: 64px;
+  --rcs-wave-thickness: 12px;
+}
+
 .rcs-wave {
-  --rcs-wave-ratio: calc(var(--rcs-wave-size) / 64);
   display: inline-block;
   position: relative;
   width: var(--rcs-wave-size);
@@ -9,35 +14,35 @@
 .rcs-wave div {
   display: inline-block;
   position: absolute;
-  left: calc(6 * var(--rcs-wave-ratio));
+  left: calc(var(--rcs-wave-size) / 10);
   width: var(--rcs-wave-thickness);
   background: var(--rcs-wave-color);
   animation: rcs-wave 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
 
 .rcs-wave div:nth-child(1) {
-  left: calc(6 * var(--rcs-wave-ratio));
+  left: calc(var(--rcs-wave-size) / 10);
   animation-delay: -0.24s;
 }
 
 .rcs-wave div:nth-child(2) {
-  left: calc(26 * var(--rcs-wave-ratio));
+  left: calc(var(--rcs-wave-size) / 2.5);
   animation-delay: -0.12s;
 }
 
 .rcs-wave div:nth-child(3) {
-  left: calc(45 * var(--rcs-wave-ratio));
+  left: calc(var(--rcs-wave-size) / 1.42857);
   animation-delay: 0;
 }
 
 @keyframes rcs-wave {
   0% {
-    top: calc(6 * var(--rcs-wave-ratio));
-    height: calc(51 * var(--rcs-wave-ratio));
+    top: calc(var(--rcs-wave-size) / 10);
+    height: calc(var(--rcs-wave-size) / 1.25);
   }
   50%,
   100% {
-    top: calc(19 * var(--rcs-wave-ratio));
-    height: calc(26 * var(--rcs-wave-ratio));
+    top: calc(var(--rcs-wave-size) / 3.33333);
+    height: calc(var(--rcs-wave-size) / 2.5);
   }
 }

@@ -3,12 +3,7 @@
 exports[`renders correctly 1`] = `
 <div
   className="rcs-ellipsis"
-  style={
-    Object {
-      "--rcs-ellipsis-color": "#fff",
-      "--rcs-ellipsis-size": "64px",
-    }
-  }
+  style={Object {}}
 >
   <div />
   <div />

@@ -1,5 +1,10 @@
+:root {
+  --rcs-ripple-color: #fff;
+  --rcs-ripple-size: 64px;
+  --rcs-ripple-thickness: 4px;
+}
+
 .rcs-ripple {
-  --rcs-ripple-ratio: calc(var(--rcs-ripple-size) / 64);
   display: inline-block;
   position: relative;
   width: var(--rcs-ripple-size);
@@ -19,17 +24,17 @@
 
 @keyframes rcs-ripple {
   0% {
-    top: calc(28 * var(--rcs-ripple-ratio));
-    left: calc(28 * var(--rcs-ripple-ratio));
+    top: calc(var(--rcs-ripple-size) / 2.22222);
+    left: calc(var(--rcs-ripple-size) / 2.22222);
     width: 0;
     height: 0;
     opacity: 1;
   }
   100% {
-    top: -1px;
-    left: -1px;
-    width: calc(58 * var(--rcs-ripple-ratio));
-    height: calc(58 * var(--rcs-ripple-ratio));
+    top: 0px;
+    left: 0px;
+    width: calc(var(--rcs-ripple-size) / 1.11111);
+    height: calc(var(--rcs-ripple-size) / 1.11111);
     opacity: 0;
   }
 }

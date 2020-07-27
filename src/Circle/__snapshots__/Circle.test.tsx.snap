@@ -3,24 +3,8 @@
 exports[`renders correctly 1`] = `
 <div
   className="rcs-circle"
-  style={
-    Object {
-      "--rcs-circle-color": "#fff",
-      "--rcs-circle-size": "64px",
-    }
-  }
+  style={Object {}}
 >
-  <div />
-  <div />
-  <div />
-  <div />
-  <div />
-  <div />
-  <div />
-  <div />
-  <div />
-  <div />
-  <div />
   <div />
 </div>
 `;

@@ -3,13 +3,7 @@
 exports[`renders correctly 1`] = `
 <div
   className="rcs-wave"
-  style={
-    Object {
-      "--rcs-wave-color": "#fff",
-      "--rcs-wave-size": "64px",
-      "--rcs-wave-thickness": "12px",
-    }
-  }
+  style={Object {}}
 >
   <div />
   <div />
