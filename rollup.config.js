@@ -41,7 +41,7 @@ export default [
       }),
       babel(babelOptions),
       postcss({
-        extract: 'dist/style.css',
+        extract: 'style.css',
       }),
     ],
   },
@@ -61,7 +61,7 @@ export default [
         plugins: ['transform-react-remove-prop-types'],
       }),
       postcss({
-        extract: 'dist/style.min.css',
+        extract: 'style.min.css',
         minimize: true,
       }),
       terser(),
